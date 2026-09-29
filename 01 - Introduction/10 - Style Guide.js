@@ -77,7 +77,7 @@ const MAX_TIMEOUT = 100
  * - Avoid underscores, special symbols, and spaces.
  * - Prefer verbs for method names to indicate action (e.g., calculateTotal, sendRequest).
  */
-function validateData() {}
+function validateData() { }
 
 /**
  * Constructor Functions
@@ -86,7 +86,7 @@ function validateData() {}
  * - Avoid underscores, special symbols, and spaces.
  * - Acronyms should follow CamelCase (e.g., HttpRequest, XmlParser).
  */
-function Person() {}
+function Person() { }
 
 /**
  * Object Keys
@@ -103,16 +103,16 @@ const profile = {
     roles: ['admin', 'developer']
 }
 
-/**
- * JSON Keys
- * - Use camelCase (start with lowercase, capitalize subsequent words).
- * - Avoid underscores, special symbols, and leading/trailing spaces (e.g., API payloads, database
- *   columns, or JSON schemas) that strictly require snake_case or kebab-case
- * - Acronyms should follow camelCase rules (e.g., httpRequest).
- * - Always use double quotes ("").
- * - Do not use comments.
- */
-```
+    /**
+     * JSON Keys
+     * - Use camelCase (start with lowercase, capitalize subsequent words).
+     * - Avoid underscores, special symbols, and leading/trailing spaces (e.g., API payloads, database
+     *   columns, or JSON schemas) that strictly require snake_case or kebab-case
+     * - Acronyms should follow camelCase rules (e.g., httpRequest).
+     * - Always use double quotes ("").
+     * - Do not use comments.
+     */
+    ```
 {
     "userId": 42,
     "userName": 'John',
@@ -128,7 +128,7 @@ const profile = {
  * - Avoid underscores, special symbols, and spaces.
  * - Acronyms should follow CamelCase (e.g., HttpRequest, XmlParser).
  */
-class HttpClient {}
+class HttpClient { }
 
 /**
  * Fields
@@ -150,8 +150,8 @@ class User {
  * - Use '#' as prefix to mark as private.
  */
 class Processor {
-    process() {}
-    #terminate() {}
+    process() { }
+    #terminate() { }
 }
 
 /**
@@ -163,10 +163,10 @@ class Processor {
  * - Use '#' as prefix to mark as private.
  */
 class Subject {
-    set name(newName) {}
-    get name() {}
-    set #age(newAge) {}
-    get #age() {}
+    set name(newName) { }
+    get name() { }
+    set #age(newAge) { }
+    get #age() { }
 }
 
 /**
@@ -186,7 +186,7 @@ try {
  * - Avoid underscores, special symbols, and spaces.
  * - Extend from Error class.
  */
-class AppError extends Error {}
+class AppError extends Error { }
 
 /**
  * Reserved Words
@@ -213,6 +213,6 @@ const message = 'Hello'
  *   ((), or binary/logical operators with a leading semicolon to prevent ASI syntax bugs.
  */
 const x = 1
-;(function() { // <- Leading semicolon safeguard for IIFEs, arrays, or expressions.
-    // ...
-})()
+    ; (function () { // <- Leading semicolon safeguard for IIFEs, arrays, or expressions.
+        // ...
+    })()
