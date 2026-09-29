@@ -1,0 +1,24 @@
+{
+  "name": "javascript-guide",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">\r     <img src=\"https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg\" width=\"100px\" />\r     <h1 align=\"center\">JavaScript Guide</h1>\r     <p align=\"center\">A practical reference guide for JavaScript and Node.js.</p>\r </p>",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinibiavatti1/JavaScriptGuide.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vinibiavatti1/JavaScriptGuide/issues"
+  },
+  "homepage": "https://github.com/vinibiavatti1/JavaScriptGuide#readme",
+  "devDependencies": {
+    "@types/node": "^26.6.3"
+  }
+}
