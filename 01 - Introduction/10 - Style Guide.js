@@ -1,14 +1,14 @@
 /**
  * Style Guide
  *
- * This file outlines the primary code style and naming conventions for JavaScript
- * and Node.js applications. Adhering to a consistent style guide ensures high code
- * legibility, easier maintenance, and seamless team collaboration.
+ * This file outlines the primary code style and naming conventions for JavaScript and Node.js
+ * applications. Adhering to a consistent style guide ensures high code legibility, easier
+ * maintenance, and seamless team collaboration.
  */
 
-//=================================================================================================
+//==================================================================================================
 // Naming Conventions
-//=================================================================================================
+//==================================================================================================
 
 /**
  * Project
@@ -101,25 +101,25 @@ const profile = {
     userName: 'John',
     isActive: true,
     roles: ['admin', 'developer']
-}
+};
 
-    /**
-     * JSON Keys
-     * - Use camelCase (start with lowercase, capitalize subsequent words).
-     * - Avoid underscores, special symbols, and leading/trailing spaces (e.g., API payloads, database
-     *   columns, or JSON schemas) that strictly require snake_case or kebab-case
-     * - Acronyms should follow camelCase rules (e.g., httpRequest).
-     * - Always use double quotes ("").
-     * - Do not use comments.
-     */
-    ```
+/**
+ * JSON Keys
+ * - Use camelCase (start with lowercase, capitalize subsequent words).
+ * - Avoid underscores, special symbols, and leading/trailing spaces (e.g., API payloads, database
+ *   columns, or JSON schemas) that strictly require snake_case or kebab-case.
+ * - Acronyms should follow camelCase rules (e.g., httpRequest).
+ * - Always use double quotes ("").
+ * - Do not use comments.
+ */
+`
 {
     "userId": 42,
     "userName": 'John',
     "isActive": true,
     "roles": ['admin', 'developer']
 }
-```
+`
 
 /**
  * Classes
@@ -195,24 +195,12 @@ class AppError extends Error { }
  */
 const clazz = 'Person'
 
-//=================================================================================================
+//==================================================================================================
 // Code Conventions
-//=================================================================================================
+//==================================================================================================
 
 /**
  * Strings
  * - Always use single quotes (') for strings.
  */
 const message = 'Hello'
-
-/**
- * Semicolons
- * - Prefer omitting semicolons at the end of statements to maintain a clean, modern syntax.
- * - Rely on JavaScript's Automatic Semicolon Insertion (ASI) mechanism.
- * - Always prefix lines starting with an array ([]), template literal (`), or parentheses
- *   ((), or binary/logical operators with a leading semicolon to prevent ASI syntax bugs.
- */
-const x = 1
-    ; (function () { // <- Leading semicolon safeguard for IIFEs, arrays, or expressions.
-        // ...
-    })()

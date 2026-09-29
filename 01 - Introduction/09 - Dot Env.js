@@ -2,15 +2,15 @@
  * Dot Env (.env)
  *
  * The '.env' file is a simple text file used to store sensitive data and environment-specific
- * configuration variables (such as database URLs, API keys, port numbers, and secrets)
- * outside of your actual application code.
+ * configuration variables (such as database URLs, API keys, port numbers, and secrets) outside of
+ * your actual application code.
  *
  * Why Use a .env File?
- * - Security (No Hardcoded Secrets): Prevents sensitive credentials (like passwords or
- *   tokens) from being accidentally committed to public code repositories (like GitHub).
- * - Environment Flexibility: Allows your application to behave differently depending
- *   on where it runs (e.g., development, staging, or production) simply by changing
- *   the variables (.env, .env.development, .env.staging, .env.production).
+ * - Security (No Hardcoded Secrets): Prevents sensitive credentials (like passwords or tokens) from
+ *   being accidentally committed to public code repositories (like GitHub).
+ * - Environment Flexibility: Allows your application to behave differently depending on where it
+ *   runs (e.g., development, staging, or production) simply by changing the variables (.env,
+ *   .env.development, .env.staging, .env.production).
  *
  * Native Support in Modern Node.js:
  * - Historically, developers relied on external packages like 'dotenv' to read '.env' files.
@@ -36,8 +36,8 @@ NODE_ENV=development
 
 /**
  * Access variables directly from process.env
- * - No manual loading or external libraries required; the runtime automatically
- *   injects the variables before executing the script.
+ * - No manual loading or external libraries required; the runtime automatically injects the
+ *   variables before executing the script.
  */
 const port = process.env.PORT;
 const dbUrl = process.env.DATABASE_URL;

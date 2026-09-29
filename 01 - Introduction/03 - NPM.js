@@ -1,14 +1,14 @@
 /**
  * NPM (Node Package Manager).
  *
- * NPM is the default package manager for Node.js. It consists of two main parts:
- * an online repository for publishing open-source Node.js projects (the registry)
- * and a command-line tool for interacting with that repository, installing
- * packages, managing versions, and handling project dependencies.
+ * NPM is the default package manager for Node.js. It consists of two main parts: an online
+ * repository for publishing open-source Node.js projects (the registry) and a command-line tool for
+ * interacting with that repository, installing packages, managing versions, and handling project
+ * dependencies.
  *
- * Created by Isaac Z. Schlueter in 2009. It was inspired by other package
- * managers like Perl's CPAN, PHP's PEAR, and Ruby's RubyGems. NPM grew rapidly
- * alongside Node.js and eventually became the world's largest software registry.
+ * Created by Isaac Z. Schlueter in 2009. It was inspired by other package managers like Perl's
+ * CPAN, PHP's PEAR, and Ruby's RubyGems. NPM grew rapidly alongside Node.js and eventually became
+ * the world's largest software registry.
  *
  * Key Functions:
  * - Installs local dependencies for specific projects inside a 'node_modules' folder.

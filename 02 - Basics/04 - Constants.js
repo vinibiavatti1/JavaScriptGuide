@@ -1,9 +1,9 @@
 /**
  * Constants
  *
- * Constants are block-scoped variables whose values cannot be reassigned through
- * re-assignment, and they cannot be redeclared. By convention, global or module-level
- * configuration constants are often named using UPPER_SNAKE_CASE.
+ * Constants are block-scoped variables whose values cannot be reassigned through re-assignment, and
+ * they cannot be redeclared. By convention, global or module-level configuration constants are
+ * often named using UPPER_SNAKE_CASE.
  *
  * Syntax: const <name> = <value>
  */
@@ -18,8 +18,8 @@ console.log(API_VERSION)
 
 /**
  * Local Const
- * - Declares a constant that is block-scoped, meaning it only exists within the enclosing
- *   curly braces {}.
+ * - Declares a constant that is block-scoped, meaning it only exists within the enclosing curly
+ *   braces {}.
  * - Output: 1
  */
 {

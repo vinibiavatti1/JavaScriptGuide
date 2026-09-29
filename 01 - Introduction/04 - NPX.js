@@ -1,10 +1,9 @@
 /**
  * NPX (Node Package Execute)
  *
- * NPX is a package runner tool that comes bundled with npm (version 5.2.0 and later).
- * Its primary purpose is to make it easy to run CLI tools and other executable packages
- * hosted on the npm registry without the need to manually install them globally
- * or locally first.
+ * NPX is a package runner tool that comes bundled with npm (version 5.2.0 and later). Its primary
+ * purpose is to make it easy to run CLI tools and other executable packages hosted on the npm
+ * registry without the need to manually install them globally or locally first.
  *
  * Why NPX is useful:
  * - Executes packages directly without permanent global installation.

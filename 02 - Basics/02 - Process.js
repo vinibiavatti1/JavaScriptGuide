@@ -1,20 +1,21 @@
 /**
  * Process
  *
- * The Node.js 'process' object provides information about, and control over,
- * the current Node.js process. As a global, it is always available to Node.js
- * applications without requiring an explicit import.
+ * The Node.js 'process' object provides information about, and control over, the current Node.js
+ * process. As a global, it is always available to Node.js applications without requiring an
+ * explicit import.
  *
  * Key Characteristics:
  * - Built-in & Global: Available globally, though explicit import via 'node:process' is supported.
- * - Event Emitter: The process object is an instance of EventEmitter, handling lifecycle events like 'exit'.
+ * - Event Emitter: The process object is an instance of EventEmitter, handling lifecycle events
+ *   like 'exit'.
  */
 
 /**
  * Command Line Arguments
  * - Captures the arguments passed via the script's execution line.
- * - 'process.argv' contains an array where the first element is the path to the Node.js executable, and the
- *   second element is the path to the currently executing JavaScript file.
+ * - 'process.argv' contains an array where the first element is the path to the Node.js executable,
+ *   and the second element is the path to the currently executing JavaScript file.
  * - Example: "node ./Process.js -a -b -c" will result in the output below.
  * - Output: ['.../node.exe', '.../Process.js', '-a', '-b', '-c']
  */
@@ -41,6 +42,13 @@ console.log(process.version, process.platform, process.arch, process.pid)
  * - Output: C:\...
  */
 console.log(process.cwd())
+
+/**
+ * Events
+ * - Subscribes to lifecycle and error events emitted by the process.
+ * - Some of the events are: 'exit', 'uncaughtException', 'warning'.
+ */
+process.on('exit', (code) => { })
 
 /**
  * Exit

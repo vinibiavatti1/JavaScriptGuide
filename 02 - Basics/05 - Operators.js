@@ -1,8 +1,8 @@
 /**
  * Operators
  *
- * Operators are used to perform operations on variables and values,
- * ranging from basic arithmetic to modern logical evaluations and bitwise manipulation.
+ * Operators are used to perform operations on variables and values, ranging from basic arithmetic
+ * to modern logical evaluations and bitwise manipulation.
  *
  * Operators:
  * - Arithmetic Operators: +, -, *, /, %, **
@@ -49,7 +49,8 @@ console.log(-x) // -1
 
 /**
  * Increment/Decrement Operators
- * - Increases or decreases an operand by 1, returning either the value before or after the operation.
+ * - Increases or decreases an operand by 1, returning either the value before or after the
+ *   operation.
  * - Prefix  (++x / --x): increments/decrements the value first, then returns it.
  * - Postfix (x++ / x--): returns the current value first, then increments/decrements it.
  */

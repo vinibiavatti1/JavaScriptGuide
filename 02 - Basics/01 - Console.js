@@ -1,15 +1,15 @@
 /**
  * Console
  *
- * The Node.js 'console' module provides a simple debugging console that is similar to
- * the JavaScript console mechanism provided by web browsers. It outputs directly to
- * standard output (stdout) and standard error (stderr).
+ * The Node.js 'console' module provides a simple debugging console that is similar to the
+ * JavaScript console mechanism provided by web browsers. It outputs directly to standard output
+ * (stdout) and standard error (stderr).
  *
  * Key Characteristics:
- * - Built-in & Global: Available globally without needing an explicit import (though
- *   it can also be explicitly imported via 'node:console').
- * - Streams Mapping: Methods like 'console.log()' write to process.stdout, while
- *   methods like 'console.error()' write to process.stderr.
+ * - Built-in & Global: Available globally without needing an explicit import (though it can also be
+ *   explicitly imported via 'node:console').
+ * - Streams Mapping: Methods like 'console.log()' write to process.stdout, while methods like
+ *   'console.error()' write to process.stderr.
  */
 
 /**
