@@ -4,8 +4,6 @@
  * Constants are block-scoped variables whose values cannot be reassigned through re-assignment, and
  * they cannot be redeclared. By convention, global or module-level configuration constants are
  * often named using UPPER_SNAKE_CASE.
- *
- * Syntax: const <name> = <value>
  */
 
 /**

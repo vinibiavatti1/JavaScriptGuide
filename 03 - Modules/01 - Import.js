@@ -4,14 +4,6 @@
  * Imports are used in ECMAScript Modules (ESM) to bring in functions, objects, or primitives that
  * have been exported from another module, file, or package. All static imports are hoisted to the
  * top of the file and evaluated first.
- *
- * Syntax:
- * - import <specifier> from '<module-name>'
- * - import { <specifier> } from '<module-name>'
- * - import { <specifier> as <name> } from '<module-name>'
- * - import * as <name> from '<module-name>'
- * - import '<module-name>'
- * - import('<module-name>')
  */
 
 /**

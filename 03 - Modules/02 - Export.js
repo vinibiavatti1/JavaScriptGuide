@@ -3,11 +3,6 @@
  *
  * Exports are used in ECMAScript Modules (ESM) to make functions, objects, or primitives available
  * to other files or modules via import statements.
- *
- * Syntax:
- * - export <declaration>
- * - export default <declaration>
- * - export { <name>, ... }
  */
 
 /**

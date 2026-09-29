@@ -4,8 +4,6 @@
  * Variables are named containers for storing data values. In modern JavaScript (ES6+), we use
  * declarations like 'let' to manage variable scopes safely, while 'var' is the legacy
  * function-scoped way of declaring variables.
- *
- * Syntax: let <name> = <value>
  */
 
 /**
