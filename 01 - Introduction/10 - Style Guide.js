@@ -97,9 +97,10 @@ function Person() {}
  * - Quote keys only when they contain reserved words, spaces, or special characters.
  */
 const profile = {
-    firstName: 'John',
-    '@': '123',
-    created_at: '2026-09-29'
+    userId: 42,
+    userName: 'John',
+    isActive: true,
+    roles: ['admin', 'developer']
 }
 
 /**
@@ -113,9 +114,10 @@ const profile = {
  */
 ```
 {
-    "firstName": "John",
-    "@": "123",
-    "created_at": "2026-09-29"
+    "userId": 42,
+    "userName": 'John',
+    "isActive": true,
+    "roles": ['admin', 'developer']
 }
 ```
 
@@ -202,3 +204,15 @@ const clazz = 'Person'
  * - Always use single quotes (') for strings.
  */
 const message = 'Hello'
+
+/**
+ * Semicolons
+ * - Prefer omitting semicolons at the end of statements to maintain a clean, modern syntax.
+ * - Rely on JavaScript's Automatic Semicolon Insertion (ASI) mechanism.
+ * - Always prefix lines starting with an array ([]), template literal (`), or parentheses
+ *   ((), or binary/logical operators with a leading semicolon to prevent ASI syntax bugs.
+ */
+const x = 1
+;(function() { // <- Leading semicolon safeguard for IIFEs, arrays, or expressions.
+    // ...
+})()
