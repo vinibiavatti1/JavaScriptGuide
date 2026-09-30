@@ -36,7 +36,9 @@ console.log(id.description)
  */
 id = Symbol('id')
 const obj = { name: 'John', [id]: 'secret' }
-for (let key in obj) console.log(key, obj[key])
+for (let key in obj) {
+    console.log(key, obj[key])
+}
 
 /**
  * Type Of

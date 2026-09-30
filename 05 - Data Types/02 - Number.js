@@ -48,11 +48,24 @@ a = 1_000_000
 console.log(a)
 
 /**
+ * To Fixed
+ * - Formats a number using fixed-point notation, specifying the number of decimal places.
+ * - Returns a string representation of the number.
+ * - Output: 1.00
+ */
+a = 1
+b = a.toFixed(2)
+console.log(b)
+
+/**
  * Identifying
  * - Checking if a number is an integer using 'Number.isInteger()'.
  * - Output: true false
  */
-console.log(Number.isInteger(1), Number.isInteger(3.14))
+console.log(
+    Number.isInteger(1),
+    Number.isInteger(3.14)
+)
 
 /**
  * Type Of
@@ -90,13 +103,3 @@ console.log(a, Number.isFinite(a))
  */
 a = 0 / 0
 console.log(a, Number.isNaN(a))
-
-/**
- * toFixed
- * - Formats a number using fixed-point notation, specifying the number of decimal places.
- * - Returns a string representation of the number.
- * - Output: 1.00
- */
-a = 1
-b = a.toFixed(2)
-console.log(b)
