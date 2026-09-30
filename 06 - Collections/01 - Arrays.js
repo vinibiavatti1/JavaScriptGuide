@@ -19,28 +19,6 @@ let arr = ['A', 'B', 'C']
 console.log(arr)
 
 /**
- * Destructuring
- * - Unpacks values from arrays into distinct variables.
- * - Supports default values when elements are undefined and the rest syntax (...) to gather
- *   remaining elements.
- * - Output: A B [ 'C', 'D' ]
- */
-arr = ['A', 'B', 'C', 'D']
-let [a, b, ...rest] = arr
-console.log(a, b, rest)
-
-/**
- * Spread Operator (...)
- * - Expands an array into its individual elements.
- * - Commonly used for shallow copying arrays, merging multiple arrays, or passing array elements as
- *   function arguments.
- * - Output: ['A', 'B', 'C']
- */
-arr = ['A', 'B']
-let result = [...arr, 'C']
-console.log(result)
-
-/**
  * Length
  * - Returns the total number of elements present in the array.
  * - Output:
@@ -64,6 +42,28 @@ console.log(arr[0])
 arr = ['A', 'B', 'C']
 arr[1] = 'X'
 console.log(arr)
+
+/**
+ * Destructuring
+ * - Unpacks values from arrays into distinct variables.
+ * - Supports default values when elements are undefined and the rest syntax (...) to gather
+ *   remaining elements.
+ * - Output: A B [ 'C', 'D' ]
+ */
+arr = ['A', 'B', 'C', 'D']
+let [a, b, ...rest] = arr
+console.log(a, b, rest)
+
+/**
+ * Spread Operator (...)
+ * - Expands an array into its individual elements.
+ * - Commonly used for shallow copying arrays, merging multiple arrays, or passing array elements as
+ *   function arguments.
+ * - Output: ['A', 'B', 'C']
+ */
+arr = ['A', 'B']
+let clone = [...arr, 'C']
+console.log(clone)
 
 /**
  * To String
@@ -241,7 +241,7 @@ console.log(arr)
  * - Output: [ 'A', 'B' ]
  */
 arr = ['A', 'B', 'C']
-result = arr.slice(0, 2)
+let result = arr.slice(0, 2)
 console.log(result)
 
 /**
