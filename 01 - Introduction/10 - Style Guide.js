@@ -89,8 +89,17 @@ function validateData() { }
 function Person() { }
 
 /**
- * Object Keys
+ * Labels
  * - Use camelCase (start with lowercase, capitalize subsequent words).
+ * - Avoid underscores, special symbols, and leading/trailing spaces.
+ * - Acronyms should follow camelCase rules (e.g., httpRequest).
+ */
+myBlock: {
+}
+
+/**
+ * Object Keys
+ * - Use camelCase.
  * - Avoid underscores, special symbols, and leading/trailing spaces (e.g., API payloads, database
  *   columns, or JSON schemas) that strictly require snake_case or kebab-case
  * - Acronyms should follow camelCase rules (e.g., httpRequest).
@@ -105,7 +114,7 @@ const profile = {
 
 /**
  * JSON Keys
- * - Use camelCase (start with lowercase, capitalize subsequent words).
+ * - Use camelCase.
  * - Avoid underscores, special symbols, and leading/trailing spaces (e.g., API payloads, database
  *   columns, or JSON schemas) that strictly require snake_case or kebab-case.
  * - Acronyms should follow camelCase rules (e.g., httpRequest).
