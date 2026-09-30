@@ -10,11 +10,6 @@
  * CPAN, PHP's PEAR, and Ruby's RubyGems. NPM grew rapidly alongside Node.js and eventually became
  * the world's largest software registry.
  *
- * Key Functions:
- * - Installs local dependencies for specific projects inside a 'node_modules' folder.
- * - Installs global CLI tools.
- * - Manages project metadata and versioning via package.json.
- *
  * Website: https://www.npmjs.com/
  */
 
