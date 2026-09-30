@@ -30,6 +30,17 @@ let [a, b, ...rest] = arr
 console.log(a, b, rest)
 
 /**
+ * Spread Operator (...)
+ * - Expands an array into its individual elements.
+ * - Commonly used for shallow copying arrays, merging multiple arrays, or passing array elements as
+ *   function arguments.
+ * - Output: ['A', 'B', 'C']
+ */
+arr = ['A', 'B']
+let result = [...arr, 'C']
+console.log(result)
+
+/**
  * Length
  * - Returns the total number of elements present in the array.
  * - Output:
@@ -230,7 +241,7 @@ console.log(arr)
  * - Output: [ 'A', 'B' ]
  */
 arr = ['A', 'B', 'C']
-let result = arr.slice(0, 2)
+result = arr.slice(0, 2)
 console.log(result)
 
 /**
