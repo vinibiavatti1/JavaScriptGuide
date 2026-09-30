@@ -55,7 +55,7 @@ console.log(a)
 console.log(Number.isInteger(1), Number.isInteger(3.14))
 
 /**
- * Typeof
+ * Type Of
  * - Checking if a value is strictly of type 'number' using the 'typeof' operator.
  * - Output: true
  */

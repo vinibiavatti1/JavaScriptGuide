@@ -68,7 +68,7 @@ let b = a.toString()
 console.log(b)
 
 /**
- * Typeof
+ * Type Of
  * - Checking if a value is strictly of type 'string'.
  * - Output: true
  */
@@ -84,15 +84,19 @@ console.log(typeof str === 'string')
  * - Special characters usable inside strings.
  */;
 `
-\'   - Single Quote
-\"   - Double Quote
-\\   - Backslash
-\n   - New Line
-\r   - Carriage Return
-\t   - Tabular
-\b   - Backspace
-\f   - Form Feed (new page)
-\x53 - Hex value
+\'     - Single Quote
+\"     - Double Quote
+\\     - Backslash
+\0     - Null Byte
+\n     - New Line
+\r     - Carriage Return
+\t     - Horizontal Tab
+\v     - Vertical Tab
+\b     - Backspace
+\f     - Form Feed (new page)
+\x53   - Hex value (2 digits)
+\u0053 - Unicode (4 digits)
+\u{53} - Unicode (Code point with braces)
 `;
 
 /**
