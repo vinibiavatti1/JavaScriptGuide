@@ -32,19 +32,12 @@ console.log(a, b, c, d)
 /**
  * Casting
  * - Parsing strings into numeric values. Note that 'parseInt' discards decimals.
+ * - Note: The 'radix' param allows to parse strings from a specific base into a base-10 integer.
  * - Output: 3 3.14
  */
 a = parseInt('3.14')
 b = parseFloat('3.14')
 console.log(a, b)
-
-/**
- * Casting With Radix
- * - Parsing strings from a specific base (radix) into a base-10 integer.
- * - Output: 21
- */
-a = parseInt('15', 16)
-console.log(a)
 
 /**
  * Underscore (Numeric Separators)
@@ -60,6 +53,14 @@ console.log(a)
  * - Output: true false
  */
 console.log(Number.isInteger(1), Number.isInteger(3.14))
+
+/**
+ * Typeof
+ * - Checking if a value is strictly of type 'number' using the 'typeof' operator.
+ * - Output: true
+ */
+a = 1
+console.log(typeof a === 'number')
 
 /**
  * Overflow
@@ -89,3 +90,13 @@ console.log(a, Number.isFinite(a))
  */
 a = 0 / 0
 console.log(a, Number.isNaN(a))
+
+/**
+ * toFixed
+ * - Formats a number using fixed-point notation, specifying the number of decimal places.
+ * - Returns a string representation of the number.
+ * - Output: 1.00
+ */
+a = 1
+b = a.toFixed(2)
+console.log(b)

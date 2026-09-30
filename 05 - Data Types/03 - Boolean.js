@@ -23,7 +23,7 @@ b = Boolean('hello')
 console.log(a, b)
 
 /**
- * Identifying
+ * Typeof
  * - Checking if a value is strictly of type 'boolean' using the 'typeof' operator.
  * - Output: true
  */
