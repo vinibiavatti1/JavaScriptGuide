@@ -6,7 +6,7 @@
  */
 
 /**
- * Assigning
+ * Declaration
  * - Direct assignment of boolean literal values.
  */
 let a = true
@@ -29,6 +29,14 @@ console.log(a, b)
  */
 a = true
 console.log(typeof a === 'boolean')
+
+/**
+ * To String
+ * - Converts the value into its string representation using the 'toString()' method.
+ * - Output: true
+ */
+a = true
+console.log(a.toString())
 
 /**
  * Truthy and Falsy

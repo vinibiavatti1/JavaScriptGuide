@@ -7,7 +7,7 @@
  */
 
 /**
- * Assigning
+ * Declaration
  * - Basic numeric assignments, including integers, negative numbers, decimals,
  *   and shorthand notations.
  */
@@ -48,16 +48,6 @@ a = 1_000_000
 console.log(a)
 
 /**
- * To Fixed
- * - Formats a number using fixed-point notation, specifying the number of decimal places.
- * - Returns a string representation of the number.
- * - Output: 1.00
- */
-a = 1
-b = a.toFixed(2)
-console.log(b)
-
-/**
  * Identifying
  * - Checking if a number is an integer using 'Number.isInteger()'.
  * - Output: true false
@@ -74,6 +64,24 @@ console.log(
  */
 a = 1
 console.log(typeof a === 'number')
+
+/**
+ * To String
+ * - Converts the value into its string representation using the 'toString()' method.
+ * - Output: 1
+ */
+a = 1
+console.log(a.toString())
+
+/**
+ * To Fixed
+ * - Formats a number using fixed-point notation, specifying the number of decimal places.
+ * - Returns a string representation of the number.
+ * - Output: 1.00
+ */
+a = 1
+b = a.toFixed(2)
+console.log(b)
 
 /**
  * Overflow

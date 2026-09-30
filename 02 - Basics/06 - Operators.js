@@ -60,6 +60,7 @@ console.log(--x) // 1 - Prefix:  x becomes 1, then prints 1
  *   - ">"  : greater than
  *   - "<=" : less than or equal to
  *   - ">=" : greater than or equal to
+ * - Note: Always use '===' to avoid unexpected type coercion bugs and performance overhead.
  */
 x = 6; y = 2
 console.log(x == y)  // false

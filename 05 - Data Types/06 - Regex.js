@@ -10,18 +10,27 @@
 //==================================================================================================
 
 /**
- * Assigning
+ * Declaration
  * - Assigning a regular expression pattern directly using a literal.
  */
 let regex = /[A-Z]+/
 
 /**
- * Instance Of
+ * Type Of
  * - Checking if a value is strictly an instance of RegExp using the 'instanceof' operator.
+ * - Note: The 'typeof' operator returns 'object' for regex because regex is derived from Object.
  * - Output: true
  */
 regex = /[A-Z]+/
 console.log(regex instanceof RegExp)
+
+/**
+ * To String
+ * - Converts the value into its string representation using the 'toString()' method.
+ * - Output: /[A-Z]+/
+ */
+regex = /[A-Z]+/
+console.log(regex.toString())
 
 //==================================================================================================
 // Test

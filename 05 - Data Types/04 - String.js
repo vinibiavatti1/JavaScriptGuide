@@ -10,13 +10,13 @@
 //==================================================================================================
 
 /**
- * Assigning
+ * Declaration
  * - Direct assignment of string literal values using quotes or backticks.
  */
 let str = 'Hello World'
 
 /**
- * Assigning Multi Line
+ * Declaration With Multiline
  * - Creating multi-line strings natively using template literals.
  * - Output: Hello | World
  */
@@ -156,7 +156,7 @@ for (let char of str) {
 //==================================================================================================
 
 /**
- * charAt
+ * Char At
  * - Returns the character at the specified index (does not support negative indexing).
  * - Output: H
  */
@@ -165,7 +165,7 @@ let result = str.charAt(0)
 console.log(result)
 
 /**
- * at
+ * At
  * - Returns the character at the specified index, supporting negative indexing.
  * - Output: H
  */
@@ -174,7 +174,7 @@ result = str.at(-11)
 console.log(result)
 
 /**
- * charCodeAt
+ * Char Code At
  * - Returns an integer between 0 and 65535 representing the UTF-16 code unit at the given index.
  * - Output: 72
  */
@@ -183,7 +183,7 @@ result = str.charCodeAt(0)
 console.log(result)
 
 /**
- * codePointAt
+ * Code Point At
  * - Returns a non-negative integer that is the Unicode code point value.
  * - Output: 72
  */
@@ -192,7 +192,7 @@ result = str.codePointAt(0)
 console.log(result)
 
 /**
- * indexOf
+ * Index Of
  * - Returns the index of the first occurrence of the specified substring.
  * - Output: 2
  */
@@ -201,7 +201,7 @@ result = str.indexOf('l')
 console.log(result)
 
 /**
- * lastIndexOf
+ * Last Index Of
  * - Returns the index of the last occurrence of the specified substring.
  * - Output: 9
  */
@@ -214,7 +214,7 @@ console.log(result)
 //==================================================================================================
 
 /**
- * concat
+ * Concat
  * - Concatenates the string arguments to the calling string.
  * - Output: Hello World
  */
@@ -223,7 +223,7 @@ result = str.concat(' ', 'World')
 console.log(result)
 
 /**
- * trim
+ * Trim
  * - Removes whitespace from both ends of a string.
  * - Output: 'Hello World'
  */
@@ -232,7 +232,7 @@ result = str.trim()
 console.log(result)
 
 /**
- * trimStart
+ * Trim Start
  * - Removes whitespace from the beginning of a string.
  * - Output: 'Hello World '
  */
@@ -241,7 +241,7 @@ result = str.trimStart()
 console.log(result)
 
 /**
- * trimEnd
+ * Trim End
  * - Removes whitespace from the end of a string.
  * - Output: ' Hello World'
  */
@@ -250,7 +250,7 @@ result = str.trimEnd()
 console.log(result)
 
 /**
- * padStart
+ * Pad Start
  * - Pads the current string with another string until the resulting string reaches the given
  *   length.
  * - Output: --Hello
@@ -260,7 +260,7 @@ result = str.padStart(7, '-')
 console.log(result)
 
 /**
- * padEnd
+ * Pad End
  * - Pads the current string from the end with a given string.
  * - Output: Hello--
  */
@@ -269,7 +269,7 @@ result = str.padEnd(7, '-')
 console.log(result)
 
 /**
- * repeat
+ * Repeat
  * - Returns a new string which contains the specified number of copies of the string.
  * - Output: HelloHello
  */
@@ -278,7 +278,7 @@ result = str.repeat(2)
 console.log(result)
 
 /**
- * replace
+ * Replace
  * - Replaces the first occurrence of a specified value with another.
  * - Output: Hello World x
  */
@@ -287,7 +287,7 @@ result = str.replace('x', 'World')
 console.log(result)
 
 /**
- * replaceAll
+ * Replace All
  * - Replaces all occurrences of a specified value with another.
  * - Output: Hello World World
  */
@@ -296,7 +296,7 @@ result = str.replaceAll('x', 'World')
 console.log(result)
 
 /**
- * toUpperCase
+ * To Upper Case
  * - Converts the entire string to uppercase.
  * - Output: HELLO WORLD
  */
@@ -305,7 +305,7 @@ result = str.toUpperCase()
 console.log(result)
 
 /**
- * toLowerCase
+ * To Lower Case
  * - Converts the entire string to lowercase.
  * - Output: hello world
  */
@@ -314,7 +314,7 @@ result = str.toLowerCase()
 console.log(result)
 
 /**
- * toLocaleUpperCase
+ * To Locale Upper Case
  * - Converts a string to uppercase, respecting any locale-specific case mappings.
  * - Output: HELLO WORLD
  */
@@ -323,7 +323,7 @@ result = str.toLocaleUpperCase('en-US')
 console.log(result)
 
 /**
- * toLocaleLowerCase
+ * To Locale Lower Case
  * - Converts a string to lowercase, respecting any locale-specific case mappings.
  * - Output: hello world
  */
@@ -332,7 +332,7 @@ result = str.toLocaleLowerCase('en-US')
 console.log(result)
 
 /**
- * substring
+ * Substring
  * - Extracts characters between two indices (does not support negative indices).
  * - Output: ll
  */
@@ -341,7 +341,7 @@ result = str.substring(2, 4)
 console.log(result)
 
 /**
- * slice
+ * Slice
  * - Extracts a section of a string and returns it as a new string (supports negative indices).
  * - Output: ll
  */
@@ -350,7 +350,7 @@ result = str.slice(2, -7)
 console.log(result)
 
 /**
- * split
+ * Split
  * - Splits a String object into an array of strings by separating the string into substrings.
  * - Output: [ 'Hello', 'World' ]
  */
@@ -359,7 +359,7 @@ result = str.split(' ')
 console.log(result)
 
 /**
- * normalize
+ * Normalize
  * - Returns the Unicode Normalization Form of a given string.
  * - Output: Hello World
  */
@@ -368,7 +368,7 @@ result = str.normalize('NFC')
 console.log(result)
 
 /**
- * toWellFormed
+ * To Well Formed
  * - Returns a well-formed version of the string, replacing lone surrogates.
  * - Output: Hello World
  */
@@ -381,7 +381,7 @@ console.log(result)
 //==================================================================================================
 
 /**
- * startsWith
+ * Starts With
  * - Determines whether a string begins with the characters of a specified string.
  * - Output: true
  */
@@ -390,7 +390,7 @@ result = str.startsWith('Hello')
 console.log(result)
 
 /**
- * endsWith
+ * Ends With
  * - Determines whether a string ends with the characters of a specified string.
  * - Output: true
  */
@@ -399,7 +399,7 @@ result = str.endsWith('World')
 console.log(result)
 
 /**
- * includes
+ * Includes
  * - Determines whether one string may be found within another string.
  * - Output: true
  */
@@ -408,7 +408,7 @@ result = str.includes('Wor')
 console.log(result)
 
 /**
- * localeCompare
+ * Locale Compare
  * - Returns a number indicating whether a reference string comes before, after, or is the same as
  *   the given string.
  * - Output: 0
@@ -418,7 +418,7 @@ result = str.localeCompare('Hello World')
 console.log(result)
 
 /**
- * isWellFormed
+ * Is Well Formed
  * - Returns a boolean indicating whether the string contains no lone surrogates.
  * - Output: true
  */
@@ -431,7 +431,7 @@ console.log(result)
 //==================================================================================================
 
 /**
- * match
+ * Match
  * - Retrieves the matches when matching a string against a regular expression.
  * - Output: [ 'Hello', 'World' ]
  */
@@ -440,7 +440,7 @@ result = str.match(/[A-Za-z]+/g)
 console.log(result)
 
 /**
- * matchAll
+ * Match All
  * - Returns an iterator of all results matching a string against a regular expression.
  * - Output:
  *   [ 'Hello', index: 0, input: 'Hello World', groups: undefined ]
@@ -451,7 +451,7 @@ result = str.matchAll(/[A-Za-z]+/g)
 for (let entry of result) console.log(entry)
 
 /**
- * search
+ * Search
  * - Executes a search for a match between a regular expression and this String object.
  * - Output: 6
  */

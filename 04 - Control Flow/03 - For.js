@@ -45,8 +45,8 @@ for (let i = 0, j = 6; i < 3 && j > 3; i++, j--) {
  * - Output: A | B | C
  */
 const list = ['A', 'B', 'C']
-for (let c of list) {
-    console.log(c)
+for (let item of list) {
+    console.log(item)
 }
 
 /**

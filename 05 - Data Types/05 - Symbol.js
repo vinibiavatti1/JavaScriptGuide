@@ -6,7 +6,7 @@
  */
 
 /**
- * Assigning
+ * Declaration
  * - Direct assignment of a symbol using the 'Symbol' factory function with an optional description.
  */
 let id = Symbol('id')
@@ -47,3 +47,11 @@ for (let key in obj) {
  */
 id = Symbol('id')
 console.log(typeof id === 'symbol')
+
+/**
+ * To String
+ * - Converts the value into its string representation using the 'toString()' method.
+ * - Output: Symbol(id)
+ */
+id = Symbol('id')
+console.log(id.toString())

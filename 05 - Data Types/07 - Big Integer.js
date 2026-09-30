@@ -6,7 +6,7 @@
  */
 
 /**
- * Assigning
+ * Declaration
  * - Creating big integers by appending 'n' to an integer literal or using the 'BigInt()'
  *   constructor.
  * - Note: Passing a large number directly as a regular number into 'BigInt()' causes precision loss
@@ -22,6 +22,14 @@ let b = BigInt('999999999999999999999999999999')
  */
 a = 999999999999999999999999999999n
 console.log(typeof a === 'bigint')
+
+/**
+ * To String
+ * - Converts the value into its string representation using the 'toString()' method.
+ * - Output: 999999999999999999999999999999
+ */
+a = 999999999999999999999999999999n
+console.log(a.toString())
 
 /**
  * Downcasting
@@ -40,6 +48,6 @@ console.log(a, b)
  *   TypeError.
  * - Output: 3n
  */
-let a = 1n
-let b = 2n
+a = 1n
+b = 2n
 console.log(a + b)
