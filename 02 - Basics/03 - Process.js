@@ -4,11 +4,6 @@
  * The Node.js 'process' object provides information about, and control over, the current Node.js
  * process. As a global, it is always available to Node.js applications without requiring an
  * explicit import.
- *
- * Key Characteristics:
- * - Built-in & Global: Available globally, though explicit import via 'node:process' is supported.
- * - Event Emitter: The process object is an instance of EventEmitter, handling lifecycle events
- *   like 'exit'.
  */
 
 /**

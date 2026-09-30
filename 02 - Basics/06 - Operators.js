@@ -3,18 +3,6 @@
  *
  * Operators are used to perform operations on variables and values, ranging from basic arithmetic
  * to modern logical evaluations and bitwise manipulation.
- *
- * Operators:
- * - Arithmetic Operators: +, -, *, /, %, **
- * - Unary Operators: +, -
- * - Increment/Decrement Operators: ++, --
- * - Comparison Operators: ==, ===, !=, !==, <, >, <=, >=
- * - Logical Operators: &&, ||, !
- * - Logical Assignment Operators: &&=, ||=, ??=
- * - Nullish Operators: ??, ?.
- * - Bitwise Operators: &, |, ^, ~
- * - Shift Operators: <<, >>, >>>
- * - Assignment Operators: =, +=, -=, *=, /=, %=, &=, |=, ^=, <<=, >>=, >>>=
  */
 
 /**
