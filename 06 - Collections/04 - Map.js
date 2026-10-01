@@ -94,6 +94,15 @@ mp = new Map([['name', 'John'], ['age', 30]])
 mp.delete('age')
 console.log(mp)
 
+/**
+ * Clear
+ * - Removes all key-value entries from the Map.
+ * - Output: Map(0) {}
+ */
+mp = new Map([['name', 'John'], ['age', 30]])
+mp.clear()
+console.log(mp)
+
 //==================================================================================================
 // Iteration
 //==================================================================================================
@@ -159,16 +168,3 @@ console.log(a, b, rest)
 mp = new Map([['name', 'John'], ['age', 30]])
 let clone = new Map([...mp, ['role', 'admin']])
 console.log(clone)
-
-//==================================================================================================
-// Map Operations
-//==================================================================================================
-
-/**
- * Clear
- * - Removes all key-value entries from the Map.
- * - Output: Map(0) {}
- */
-mp = new Map([['name', 'John'], ['age', 30]])
-mp.clear()
-console.log(mp)
