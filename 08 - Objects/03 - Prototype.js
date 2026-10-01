@@ -20,6 +20,7 @@
  * - Acts as a blueprint for creating multiple objects.
  * - Inside the constructor, 'this' refers to the newly created instance.
  * - Constructor Functions typically uses the first letter capitalized.
+ * - Note: As industry standard, it is recommended to use 'class' instead.
  */
 function Person(name, age) {
     this.name = name
