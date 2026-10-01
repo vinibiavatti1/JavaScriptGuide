@@ -4,6 +4,11 @@
  * In JavaScript, the 'this' keyword refers to the execution context of a function. Its value is
  * determined dynamically at call-time (where and how the function is invoked), except for Arrow
  * Functions, which capture 'this' lexically.
+ *
+ * Explicit Binding Utilities:
+ * - call: Invokes the function immediately, setting 'this' and passing arguments individually.
+ * - apply: Invokes the function immediately, setting 'this' and passing arguments as an Array.
+ * - bind: Returns a new function with 'this' permanently bound, without invoking it immediately.
  */
 
 //==================================================================================================
