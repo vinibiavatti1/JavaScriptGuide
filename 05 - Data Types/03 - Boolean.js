@@ -9,8 +9,8 @@
  * Declaration
  * - Direct assignment of boolean literal values.
  */
-let a = true
-let b = false
+let b1 = true
+let b2 = false
 
 /**
  * Casting
@@ -18,25 +18,25 @@ let b = false
  * 'Boolean()' constructor.
  * - Output: true true
  */
-a = !!'hello'
-b = Boolean('hello')
-console.log(a, b)
+b1 = !!'hello'
+b2 = Boolean('hello')
+console.log(b1, b2)
 
 /**
  * Type Of
  * - Checking if a value is strictly of type 'boolean' using the 'typeof' operator.
  * - Output: true
  */
-a = true
-console.log(typeof a === 'boolean')
+let is = true
+console.log(typeof is === 'boolean')
 
 /**
  * To String
  * - Converts the value into its string representation using the 'toString()' method.
  * - Output: true
  */
-a = true
-console.log(a.toString())
+is = true
+console.log(is.toString())
 
 /**
  * Truthy and Falsy

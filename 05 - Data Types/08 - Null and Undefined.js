@@ -14,8 +14,8 @@
  * - Variables that are declared without an initial value are automatically assigned 'undefined'.
  * - Output: undefined
  */
-let a
-console.log(a)
+let x
+console.log(x)
 
 /**
  * Null Assignment
@@ -23,8 +23,8 @@ console.log(a)
  *   value.
  * - Output: null
  */
-let b = null
-console.log(b)
+let y = null
+console.log(y)
 
 /**
  * Equality (Loose vs Strict)

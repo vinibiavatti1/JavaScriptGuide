@@ -2,13 +2,11 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "explicit"
     },
-    "eslint.validate": [
-        "javascript"
-    ],
     "files.associations": {
         "*.js": "javascript"
     },
     "editor.rulers": [
         100
-    ]
+    ],
+    "code-runner.ignoreSelection": true
 }

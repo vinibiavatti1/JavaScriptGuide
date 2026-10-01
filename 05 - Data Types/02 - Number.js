@@ -11,23 +11,23 @@
  * - Basic numeric assignments, including integers, negative numbers, decimals,
  *   and shorthand notations.
  */
-let a = 1     // int
-let b = -1    // int (negative)
-let c = 3.14  // float
-let d = -3.14 // float (negative)
-let e = .1    // float (shorthand for 0.1)
-let f = 1.    // float (shorthand for 1.0)
+let n1 = 1     // int
+let n2 = -1    // int (negative)
+let n3 = 3.14  // float
+let n4 = -3.14 // float (negative)
+let n5 = .1    // float (shorthand for 0.1)
+let n6 = 1.    // float (shorthand for 1.0)
 
 /**
  * Notations
  * - Representing numbers in alternative numeric bases (binary, hex, octal) and scientific notation.
  * - Output: 12 255 45 2000
  */
-a = 0b001100  // Binary
-b = 0xff      // Hexadecimal
-c = 0o55      // Octal
-d = 2e3       // Scientific (2 * 10^3)
-console.log(a, b, c, d)
+n1 = 0b001100  // Binary
+n2 = 0xff      // Hexadecimal
+n3 = 0o55      // Octal
+n4 = 2e3       // Scientific (2 * 10^3)
+console.log(n1, n2, n3, n4)
 
 /**
  * Casting
@@ -35,17 +35,17 @@ console.log(a, b, c, d)
  * - Note: The 'radix' param allows to parse strings from a specific base into a base-10 integer.
  * - Output: 3 3.14
  */
-a = parseInt('3.14')
-b = parseFloat('3.14')
-console.log(a, b)
+n1 = parseInt('3.14')
+n2 = parseFloat('3.14')
+console.log(n1, n2)
 
 /**
  * Underscore (Numeric Separators)
  * - Using underscores to improve readability in large numeric literals.
  * - Output: 1000000
  */
-a = 1_000_000
-console.log(a)
+n1 = 1_000_000
+console.log(n1)
 
 /**
  * Identifying
@@ -62,16 +62,16 @@ console.log(
  * - Checking if a value is strictly of type 'number' using the 'typeof' operator.
  * - Output: true
  */
-a = 1
-console.log(typeof a === 'number')
+let n = 1
+console.log(typeof n === 'number')
 
 /**
  * To String
  * - Converts the value into its string representation using the 'toString()' method.
  * - Output: 1
  */
-a = 1
-console.log(a.toString())
+n = 1
+console.log(n.toString())
 
 /**
  * To Fixed
@@ -79,9 +79,8 @@ console.log(a.toString())
  * - Returns a string representation of the number.
  * - Output: 1.00
  */
-a = 1
-b = a.toFixed(2)
-console.log(b)
+n = 1
+console.log(n.toFixed(2))
 
 /**
  * Overflow
@@ -90,9 +89,8 @@ console.log(b)
  * - Exceeding the safe integer limit results in precision loss and scientific notation.
  * - Output: 9007199254740991 2.1361278361368216e+32
  */
-a = Number.MAX_SAFE_INTEGER
-b = 213612783613682163621638268362176
-console.log(a, b)
+n = 213612783613682163621638268362176
+console.log(Number.MAX_SAFE_INTEGER, n)
 
 /**
  * Inifity
@@ -100,8 +98,8 @@ console.log(a, b)
  * - The 'Number.isFinite' can be used to identify a finite number.
  * - Output: Infinity false
  */
-a = 1 / 0
-console.log(a, Number.isFinite(a))
+n = 1 / 0
+console.log(n, Number.isFinite(n))
 
 /**
  * NaN (Not a Number)
@@ -109,5 +107,5 @@ console.log(a, Number.isFinite(a))
  * - The 'Number.isNaN' can be used to identify a NaN.
  * - Output: NaN true
  */
-a = 0 / 0
-console.log(a, Number.isNaN(a))
+n = 0 / 0
+console.log(n, Number.isNaN(n))

@@ -43,6 +43,14 @@ str = `My name is ${name} and I'm ${age} years old`
 console.log(str)
 
 /**
+ * Index Access
+ * - Accessing characters by numerical index. Negative values are not allowed (returns undefined).
+ * - Output: W
+ */
+str = 'Hello World'
+console.log(str[6])
+
+/**
  * Length
  * - Returns the length of a string in UTF-16 code units.
  * - Output: 11
@@ -110,26 +118,6 @@ console.log(str)
 //==================================================================================================
 // Iteration
 //==================================================================================================
-
-/**
- * Index Access
- * - Accessing characters by numerical index. Negative values are not allowed (returns undefined).
- * - Output: d
- */
-str = 'Hello World'
-console.log(str[10])
-
-/**
- * While
- * - Iterating through characters using a while loop.
- * - Output: H | e | l | l | o
- */
-str = 'Hello'
-let i = 0
-while (i < str.length) {
-    console.log(str[i])
-    i++
-}
 
 /**
  * For

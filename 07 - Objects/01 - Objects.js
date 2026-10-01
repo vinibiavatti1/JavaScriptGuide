@@ -17,6 +17,10 @@
 let obj = { name: 'John', age: 30 }
 console.log(obj)
 
+//==================================================================================================
+// Properties & Methods
+//==================================================================================================
+
 /**
  * Read Proeprty
  * - Reads a property value using standard dot notation.
@@ -74,45 +78,6 @@ obj = {
 }
 console.log(obj.greet())
 
-/**
- * Optional Chaining (?.) & Nullish Coalescing (??)
- * - Safely reads nested values without throwing TypeError if an intermediate node is
- *   null/undefined.
- * - Output: undefined 'Default'
- */
-obj = { person: null }
-console.log(
-    obj.person?.name,
-    obj.person?.age ?? 'Default'
-)
-
-/**
- * Destructuring
- * - Unpacks properties into individual variables and groups remaining keys into a rest object.
- * - Output: John 30 { role: 'admin' }
- */
-obj = { name: 'John', age: 30, role: 'admin' }
-const { name, age, ...rest } = obj
-console.log(name, age, rest)
-
-/**
- * Spread Operator (...)
- * - Performs a shallow copy and allows overriding or merging properties immutably.
- * - Output: { name: 'John', age: 40 }
- */
-obj = { name: 'John', age: 30 }
-let clone = { ...obj, age: 40 }
-console.log(clone)
-
-/**
- * From Entries
- * - Converts an iterable list of key-value pairs back into an object (inverse of Object.entries).
- * - Output: { name: 'John', age: 30 }
- */
-let arr = [['name', 'John'], ['age', 30]]
-obj = Object.fromEntries(arr)
-console.log(obj)
-
 //==================================================================================================
 // Iteration
 //==================================================================================================
@@ -159,8 +124,47 @@ for (let [key, value] of Object.entries(obj)) {
 }
 
 //==================================================================================================
-// Merging & Proto Creation
+// Utility Operations
 //==================================================================================================
+
+/**
+ * Optional Chaining (?.) & Nullish Coalescing (??)
+ * - Safely reads nested values without throwing TypeError if an intermediate node is
+ *   null/undefined.
+ * - Output: undefined 'Default'
+ */
+obj = { person: null }
+console.log(
+    obj.person?.name,
+    obj.person?.age ?? 'Default'
+)
+
+/**
+ * Destructuring
+ * - Unpacks properties into individual variables and groups remaining keys into a rest object.
+ * - Output: John 30 { role: 'admin' }
+ */
+obj = { name: 'John', age: 30, role: 'admin' }
+const { name, age, ...rest } = obj
+console.log(name, age, rest)
+
+/**
+ * Spread Operator (...)
+ * - Performs a shallow copy and allows overriding or merging properties immutably.
+ * - Output: { name: 'John', age: 40 }
+ */
+obj = { name: 'John', age: 30 }
+let clone = { ...obj, age: 40 }
+console.log(clone)
+
+/**
+ * From Entries
+ * - Converts an iterable list of key-value pairs back into an object (inverse of Object.entries).
+ * - Output: { name: 'John', age: 30 }
+ */
+let arr = [['name', 'John'], ['age', 30]]
+obj = Object.fromEntries(arr)
+console.log(obj)
 
 /**
  * Assign
@@ -170,26 +174,6 @@ for (let [key, value] of Object.entries(obj)) {
 obj = { name: 'John', age: 30 }
 Object.assign(obj, { role: 'admin' })
 console.log(obj)
-
-/**
- * Create
- * - Creates a new object linked to a prototype without copying properties in memory.
- * - Output: Jane
- */
-obj = { name: 'John', getName() { return this.name } }
-let child = Object.create(obj)
-obj.name = 'Jane'
-console.log(child.getName())
-
-/**
- * Pure Dictionary Object.create(null)
- * - Creates a dictionary object with no prototype chain or inherited Object methods.
- * - Note that the object has no prototype and doesn't inherit any methods (e.g., toString), making
- *   it a pure dictionary.
- * - Output: undefined
- */
-const pureDict = Object.create(null)
-console.log(pureDict.toString)
 
 //==================================================================================================
 // Immutability

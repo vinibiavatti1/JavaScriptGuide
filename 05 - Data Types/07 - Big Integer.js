@@ -12,24 +12,24 @@
  * - Note: Passing a large number directly as a regular number into 'BigInt()' causes precision loss
  *   before creation; strings should be used instead.
  */
-let a = 999999999999999999999999999999n
-let b = BigInt('999999999999999999999999999999')
+let n1 = 999999999999999999999999999999n
+let n2 = BigInt('999999999999999999999999999999')
 
 /**
  * Type Of
  * - Checking if a value is strictly of type 'bigint' using the 'typeof' operator.
  * - Output: true
  */
-a = 999999999999999999999999999999n
-console.log(typeof a === 'bigint')
+let n = 999999999999999999999999999999n
+console.log(typeof n === 'bigint')
 
 /**
  * To String
  * - Converts the value into its string representation using the 'toString()' method.
  * - Output: 999999999999999999999999999999
  */
-a = 999999999999999999999999999999n
-console.log(a.toString())
+n = 999999999999999999999999999999n
+console.log(n.toString())
 
 /**
  * Downcasting
@@ -37,9 +37,9 @@ console.log(a.toString())
  *   precision loss for huge values.
  * - Output: 1e+30 1e+30
  */
-a = parseInt(999999999999999999999999999999n)
-b = parseFloat(999999999999999999999999999999n)
-console.log(a, b)
+n1 = parseInt(999999999999999999999999999999n)
+n2 = parseFloat(999999999999999999999999999999n)
+console.log(n1, n2)
 
 /**
  * Calculation
@@ -48,6 +48,6 @@ console.log(a, b)
  *   TypeError.
  * - Output: 3n
  */
-a = 1n
-b = 2n
-console.log(a + b)
+n1 = 1n
+n2 = 2n
+console.log(n1 + n2)
