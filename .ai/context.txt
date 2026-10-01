@@ -48,27 +48,27 @@ Sample File (Number.js)
  */
 
 /**
- * Assigning
+ * Declaration
  * - Basic numeric assignments, including integers, negative numbers, decimals,
  *   and shorthand notations.
  */
-let a = 1     // int
-let b = -1    // int (negative)
-let c = 3.14  // float
-let d = -3.14 // float (negative)
-let e = .1    // float (shorthand for 0.1)
-let f = 1.    // float (shorthand for 1.0)
+let n1 = 1     // int
+let n2 = -1    // int (negative)
+let n3 = 3.14  // float
+let n4 = -3.14 // float (negative)
+let n5 = .1    // float (shorthand for 0.1)
+let n6 = 1.    // float (shorthand for 1.0)
 
 /**
  * Notations
  * - Representing numbers in alternative numeric bases (binary, hex, octal) and scientific notation.
  * - Output: 12 255 45 2000
  */
-a = 0b001100  // Binary
-b = 0xff      // Hexadecimal
-c = 0o55      // Octal
-d = 2e3       // Scientific (2 * 10^3)
-console.log(a, b, c, d)
+n1 = 0b001100  // Binary
+n2 = 0xff      // Hexadecimal
+n3 = 0o55      // Octal
+n4 = 2e3       // Scientific (2 * 10^3)
+console.log(n1, n2, n3, n4)
 
 /**
  * Casting
@@ -76,17 +76,43 @@ console.log(a, b, c, d)
  * - Note: The 'radix' param allows to parse strings from a specific base into a base-10 integer.
  * - Output: 3 3.14
  */
-a = parseInt('3.14')
-b = parseFloat('3.14')
-console.log(a, b)
+n1 = parseInt('3.14')
+n2 = parseFloat('3.14')
+console.log(n1, n2)
 
 /**
  * Underscore (Numeric Separators)
  * - Using underscores to improve readability in large numeric literals.
  * - Output: 1000000
  */
-a = 1_000_000
-console.log(a)
+n1 = 1_000_000
+console.log(n1)
+
+/**
+ * Identifying
+ * - Checking if a number is an integer using 'Number.isInteger()'.
+ * - Output: true false
+ */
+console.log(
+    Number.isInteger(1),
+    Number.isInteger(3.14)
+)
+
+/**
+ * Type Of
+ * - Checking if a value is strictly of type 'number' using the 'typeof' operator.
+ * - Output: true
+ */
+let n = 1
+console.log(typeof n === 'number')
+
+/**
+ * To String
+ * - Converts the value into its string representation using the 'toString()' method.
+ * - Output: 1
+ */
+n = 1
+console.log(n.toString())
 
 /**
  * To Fixed
@@ -94,24 +120,8 @@ console.log(a)
  * - Returns a string representation of the number.
  * - Output: 1.00
  */
-a = 1
-b = a.toFixed(2)
-console.log(b)
-
-/**
- * Identifying
- * - Checking if a number is an integer using 'Number.isInteger()'.
- * - Output: true false
- */
-console.log(Number.isInteger(1), Number.isInteger(3.14))
-
-/**
- * Type Of
- * - Checking if a value is strictly of type 'number' using the 'typeof' operator.
- * - Output: true
- */
-a = 1
-console.log(typeof a === 'number')
+n = 1
+console.log(n.toFixed(2))
 
 /**
  * Overflow
@@ -120,9 +130,8 @@ console.log(typeof a === 'number')
  * - Exceeding the safe integer limit results in precision loss and scientific notation.
  * - Output: 9007199254740991 2.1361278361368216e+32
  */
-a = Number.MAX_SAFE_INTEGER
-b = 213612783613682163621638268362176
-console.log(a, b)
+n = 213612783613682163621638268362176
+console.log(Number.MAX_SAFE_INTEGER, n)
 
 /**
  * Inifity
@@ -130,8 +139,8 @@ console.log(a, b)
  * - The 'Number.isFinite' can be used to identify a finite number.
  * - Output: Infinity false
  */
-a = 1 / 0
-console.log(a, Number.isFinite(a))
+n = 1 / 0
+console.log(n, Number.isFinite(n))
 
 /**
  * NaN (Not a Number)
@@ -139,8 +148,8 @@ console.log(a, Number.isFinite(a))
  * - The 'Number.isNaN' can be used to identify a NaN.
  * - Output: NaN true
  */
-a = 0 / 0
-console.log(a, Number.isNaN(a))
+n = 0 / 0
+console.log(n, Number.isNaN(n))
 
 ----------------------------------------------------------------------------------------------------
 Sample File (For.js)
@@ -274,7 +283,7 @@ Sample File (Arrays.js)
 
 /**
  * Declaration
- * - Initializes a new array literal containing initial items.
+ * - Initializes a new array literal containing initial values.
  * - Output: [ 'A', 'B', 'C' ]
  */
 let arr = ['A', 'B', 'C']
@@ -304,6 +313,17 @@ console.log(arr)
  */
 arr = ['A', 'B', 'C']
 console.log(arr.length)
+
+/**
+ * Clear
+ * - Clears all elements from the array in-place by setting its length property to zero.
+ * - Note: Arrays lack a native 'clear()' method; mutating 'length = 0' is the standard way to clear
+ *   in-place.
+ * - Output: []
+ */
+arr = ['A', 'B', 'C']
+arr.length = 0
+console.log(arr)
 
 /**
  * Index Access
@@ -342,6 +362,59 @@ arr = ['A', 'B', 'C']
 console.log(arr.toString())
 
 //==================================================================================================
+// Iteration
+//==================================================================================================
+
+/**
+ * For
+ * - Standard imperative loop over array elements using an index counter.
+ * - Output: 0 A | 1 B | 2 C
+ */
+arr = ['A', 'B', 'C']
+for (let i = 0; i < arr.length; i++) {
+    console.log(i, arr[i])
+}
+
+/**
+ * For Of
+ * - Iterates directly over the values of each element in the array.
+ * - Note: Iterating directly over the array is equivalent to 'arr.values()'.
+ * - Output: A | B | C
+ */
+arr = ['A', 'B', 'C']
+for (let value of arr) {
+    console.log(value)
+}
+
+/**
+ * For Of (Keys)
+ * - Iterates over the index keys of the array.
+ * - Output: 0 | 1 | 2
+ */
+arr = ['A', 'B', 'C']
+for (let i of arr.keys()) {
+    console.log(i)
+}
+
+/**
+ * For Of (Entries)
+ * - Iterates over key-value pairs as [index, value] tuples.
+ * - Output: 0 A | 1 B | 2 C
+ */
+arr = ['A', 'B', 'C']
+for (let [i, value] of arr.entries()) {
+    console.log(i, value)
+}
+
+/**
+ * For Each (Functional)
+ * - Executes a provided callback function once for each array element.
+ * - Output: 0 A | 1 B | 2 C
+ */
+arr = ['A', 'B', 'C']
+arr.forEach((value, i) => console.log(i, value))
+
+//==================================================================================================
 // Destructure & Spread
 //==================================================================================================
 
@@ -366,59 +439,6 @@ console.log(a, b, rest)
 arr = ['A', 'B']
 let clone = [...arr, 'C']
 console.log(clone)
-
-//==================================================================================================
-// Iteration
-//==================================================================================================
-
-/**
- * For
- * - Standard imperative loop over array elements using an index counter.
- * - Output: 0 A | 1 B | 2 C
- */
-arr = ['A', 'B', 'C']
-for (let i = 0; i < arr.length; i++) {
-    console.log(i, arr[i])
-}
-
-/**
- * For Of
- * - Iterates directly over the values of each element in the array.
- * - Note: Iterating directly over the array is equivalent to 'arr.values()'.
- * - Output: A | B | C
- */
-arr = ['A', 'B', 'C']
-for (let item of arr) {
-    console.log(item)
-}
-
-/**
- * For Of (Keys)
- * - Iterates over the index keys of the array.
- * - Output: 0 | 1 | 2
- */
-arr = ['A', 'B', 'C']
-for (let i of arr.keys()) {
-    console.log(i)
-}
-
-/**
- * For Of (Entries)
- * - Iterates over key-value pairs as [index, value] tuples.
- * - Output: 0 A | 1 B | 2 C
- */
-arr = ['A', 'B', 'C']
-for (let [i, item] of arr.entries()) {
-    console.log(i, item)
-}
-
-/**
- * For Each (Functional)
- * - Executes a provided callback function once for each array element.
- * - Output: 0 A | 1 B | 2 C
- */
-arr = ['A', 'B', 'C']
-arr.forEach((item, i) => console.log(i, item))
 
 //==================================================================================================
 // Index Operations
@@ -476,8 +496,8 @@ console.log(arr)
  * - Output: C [ 'A', 'B' ]
  */
 arr = ['A', 'B', 'C']
-let item = arr.pop()
-console.log(item, arr)
+let value = arr.pop()
+console.log(value, arr)
 
 /**
  * Shift
@@ -485,8 +505,8 @@ console.log(item, arr)
  * - Output: A [ 'B', 'C' ]
  */
 arr = ['A', 'B', 'C']
-item = arr.shift()
-console.log(item, arr)
+value = arr.shift()
+console.log(value, arr)
 
 /**
  * Splice
@@ -599,7 +619,7 @@ console.log(arr.includes('B'))
  * - Output: [ 'A', 'C' ]
  */
 arr = ['A', 'B', 'C']
-result = arr.filter(item => item !== 'B')
+result = arr.filter(value => value !== 'B')
 console.log(result)
 
 /**
@@ -609,7 +629,7 @@ console.log(result)
  * - Output: AA
  */
 arr = ['A', 'AA', 'AAA']
-result = arr.find(item => item.length === 2)
+result = arr.find(value => value.length === 2)
 console.log(result)
 
 /**
@@ -619,7 +639,7 @@ console.log(result)
  * - Output: CC
  */
 arr = ['AA', 'BB', 'CC']
-result = arr.findLast(item => item.length === 2)
+result = arr.findLast(value => value.length === 2)
 console.log(result)
 
 /**
@@ -629,7 +649,7 @@ console.log(result)
  * - Output: 1
  */
 arr = ['A', 'AA', 'AAA']
-result = arr.findIndex(item => item === 'AA')
+result = arr.findIndex(value => value === 'AA')
 console.log(result)
 
 /**
@@ -639,7 +659,7 @@ console.log(result)
  * - Output: 2
  */
 arr = ['AA', 'BB', 'CC']
-result = arr.findLastIndex(item => item.length === 2)
+result = arr.findLastIndex(value => value.length === 2)
 console.log(result)
 
 /**
@@ -649,7 +669,7 @@ console.log(result)
  * - Output: [ 'a', 'b', 'c' ]
  */
 arr = ['A', 'B', 'C']
-result = arr.map(item => item.toLowerCase())
+result = arr.map(value => value.toLowerCase())
 console.log(result)
 
 /**
@@ -670,7 +690,7 @@ console.log(result)
  * - Output: [ 'John', 'Jane' ]
  */
 arr = [{ name: 'John', age: 30 }, { name: 'Jane', age: 28 }]
-result = arr.flatMap(item => item.name)
+result = arr.flatMap(value => value.name)
 console.log(result)
 
 /**
@@ -680,7 +700,7 @@ console.log(result)
  * - Output: 6
  */
 arr = [1, 2, 3]
-result = arr.reduce((acc, item) => acc + item, 0)
+result = arr.reduce((acc, value) => acc + value, 0)
 console.log(result)
 
 /**
@@ -689,7 +709,7 @@ console.log(result)
  * - Output: CBA
  */
 arr = ['A', 'B', 'C']
-result = arr.reduceRight((acc, item) => acc + item, '')
+result = arr.reduceRight((acc, value) => acc + value, '')
 console.log(result)
 
 /**
@@ -698,7 +718,7 @@ console.log(result)
  * - Output: true
  */
 arr = ['A', 'B', 'C']
-result = arr.some(item => item === 'B')
+result = arr.some(value => value === 'B')
 console.log(result)
 
 /**
@@ -707,7 +727,7 @@ console.log(result)
  * - Output: true
  */
 arr = ['B', 'B', 'B']
-result = arr.every(item => item === 'B')
+result = arr.every(value => value === 'B')
 console.log(result)
 
 ----------------------------------------------------------------------------------------------------

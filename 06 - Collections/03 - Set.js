@@ -43,52 +43,7 @@ st = new Set(['A', 'B', 'C'])
 console.log(st instanceof Set)
 
 //==================================================================================================
-// Destructure & Spread
-//==================================================================================================
-
-/**
- * Destructuring
- * - Unpacks elements from a Set into distinct variables.
- * - Output: A B [ 'C' ]
- */
-st = new Set(['A', 'B', 'C', 'C'])
-let [a, b, ...rest] = st
-console.log(a, b, rest)
-
-/**
- * Spread Operator (...)
- * - Expands a Set into its individual elements to combine or pass into structures.
- * - Output: Set(3) { 'A', 'B', 'C' }
- */
-st = new Set(['A', 'B'])
-let clone = new Set([...st, 'C'])
-console.log(clone)
-
-//==================================================================================================
-// Iteration
-//==================================================================================================
-
-/**
- * For Of
- * - Iterates directly over values stored in the Set.
- * - Note: Iterating directly over the Set is equivalent to 'st.values()'.
- * - Output: A | B | C
- */
-st = new Set(['A', 'B', 'C'])
-for (let value of st) {
-    console.log(value)
-}
-
-/**
- * For Each (Functional)
- * - Executes a provided callback function once for each element in the Set.
- * - Output: A | B | C
- */
-st = new Set(['A', 'B', 'C'])
-st.forEach(value => console.log(value))
-
-//==================================================================================================
-// Content Operations
+// Value Operations
 //==================================================================================================
 
 /**
@@ -126,6 +81,51 @@ console.log(st)
 st = new Set(['A', 'B', 'C'])
 st.clear()
 console.log(st)
+
+//==================================================================================================
+// Iteration
+//==================================================================================================
+
+/**
+ * For Of
+ * - Iterates directly over values stored in the Set.
+ * - Note: Iterating directly over the Set is equivalent to 'st.values()'.
+ * - Output: A | B | C
+ */
+st = new Set(['A', 'B', 'C'])
+for (let value of st) {
+    console.log(value)
+}
+
+/**
+ * For Each (Functional)
+ * - Executes a provided callback function once for each element in the Set.
+ * - Output: A | B | C
+ */
+st = new Set(['A', 'B', 'C'])
+st.forEach(value => console.log(value))
+
+//==================================================================================================
+// Destructure & Spread
+//==================================================================================================
+
+/**
+ * Destructuring
+ * - Unpacks elements from a Set into distinct variables.
+ * - Output: A B [ 'C' ]
+ */
+st = new Set(['A', 'B', 'C', 'C'])
+let [a, b, ...rest] = st
+console.log(a, b, rest)
+
+/**
+ * Spread Operator (...)
+ * - Expands a Set into its individual elements to combine or pass into structures.
+ * - Output: Set(3) { 'A', 'B', 'C' }
+ */
+st = new Set(['A', 'B'])
+let clone = new Set([...st, 'C'])
+console.log(clone)
 
 //==================================================================================================
 // Set Operations

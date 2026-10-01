@@ -91,32 +91,6 @@ arr = ['A', 'B', 'C']
 console.log(arr.toString())
 
 //==================================================================================================
-// Destructure & Spread
-//==================================================================================================
-
-/**
- * Destructuring
- * - Unpacks values from arrays into distinct variables.
- * - Supports default values when elements are undefined and the rest syntax (...) to gather
- *   remaining elements.
- * - Output: A B [ 'C', 'D' ]
- */
-arr = ['A', 'B', 'C', 'D']
-let [a, b, ...rest] = arr
-console.log(a, b, rest)
-
-/**
- * Spread Operator (...)
- * - Expands an array into its individual elements.
- * - Commonly used for shallow copying arrays, merging multiple arrays, or passing array elements as
- *   function arguments.
- * - Output: ['A', 'B', 'C']
- */
-arr = ['A', 'B']
-let clone = [...arr, 'C']
-console.log(clone)
-
-//==================================================================================================
 // Iteration
 //==================================================================================================
 
@@ -168,6 +142,32 @@ for (let [i, value] of arr.entries()) {
  */
 arr = ['A', 'B', 'C']
 arr.forEach((value, i) => console.log(i, value))
+
+//==================================================================================================
+// Destructure & Spread
+//==================================================================================================
+
+/**
+ * Destructuring
+ * - Unpacks values from arrays into distinct variables.
+ * - Supports default values when elements are undefined and the rest syntax (...) to gather
+ *   remaining elements.
+ * - Output: A B [ 'C', 'D' ]
+ */
+arr = ['A', 'B', 'C', 'D']
+let [a, b, ...rest] = arr
+console.log(a, b, rest)
+
+/**
+ * Spread Operator (...)
+ * - Expands an array into its individual elements.
+ * - Commonly used for shallow copying arrays, merging multiple arrays, or passing array elements as
+ *   function arguments.
+ * - Output: ['A', 'B', 'C']
+ */
+arr = ['A', 'B']
+let clone = [...arr, 'C']
+console.log(clone)
 
 //==================================================================================================
 // Index Operations
