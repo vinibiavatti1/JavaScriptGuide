@@ -17,11 +17,11 @@
  *   - "**": exponentiation
  */
 let x = 6, y = 2
-console.log(x + y) // 8
-console.log(x - y) // 4
-console.log(x * y) // 12
-console.log(x / y) // 3
-console.log(x % y) // 0
+console.log(x + y)  // 8
+console.log(x - y)  // 4
+console.log(x * y)  // 12
+console.log(x / y)  // 3
+console.log(x % y)  // 0
 console.log(2 ** 3) // 8
 
 /**
@@ -147,6 +147,7 @@ console.log(y >>> 2) // 1073741821 (sign not preserved)
  *   - "+="  : addition assignment
  *   - "-="  : subtraction assignment
  *   - "*="  : multiplication assignment
+ *   - "**=" : exponentiation assignment
  *   - "/="  : division assignment
  *   - "%="  : remainder assignment
  *   - "&="  : bitwise AND assignment

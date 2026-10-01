@@ -83,7 +83,7 @@ console.log(obj.greet())
 //==================================================================================================
 
 /**
- * For In
+ * For In (Exclusive to Objects)
  * - Iterates over all enumerable string properties of an object (including inherited prototype
  *   keys).
  * - Output: name John | age 30
@@ -122,6 +122,44 @@ obj = { name: 'John', age: 30 }
 for (let [key, value] of Object.entries(obj)) {
     console.log(key, value)
 }
+
+//==================================================================================================
+// Immutability
+//==================================================================================================
+
+/**
+ * Freeze
+ * - Prevents adding, deleting, or reassigning existing properties (shallow immutability).
+ */
+obj = { name: 'John', age: 30 }
+Object.freeze(obj)
+// obj.name = 'Jane' -> Error: Cannot assign to read only property.
+
+/**
+ * Seal
+ * - Prevents adding or removing properties, but allows modifying existing property values.
+ */
+obj = { name: 'John', age: 30 }
+Object.seal(obj)
+// obj.surname = 'Doe' -> Error: Cannot add property surname, object is not extensible.
+
+/**
+ * Is Frozen
+ * - Returns true if the object is frozen (no changes, additions, or deletions permitted).
+ * - Output: true
+ */
+obj = { name: 'John', age: 30 }
+Object.freeze(obj)
+console.log(Object.isFrozen(obj))
+
+/**
+ * Is Sealed
+ * - Returns true if the object is sealed (no structure changes, but values can mutate).
+ * - Output: true
+ */
+obj = { name: 'John', age: 30 }
+Object.seal(obj)
+console.log(Object.isSealed(obj))
 
 //==================================================================================================
 // Utility Operations
@@ -174,44 +212,6 @@ console.log(obj)
 obj = { name: 'John', age: 30 }
 Object.assign(obj, { role: 'admin' })
 console.log(obj)
-
-//==================================================================================================
-// Immutability
-//==================================================================================================
-
-/**
- * Freeze
- * - Prevents adding, deleting, or reassigning existing properties (shallow immutability).
- */
-obj = { name: 'John', age: 30 }
-Object.freeze(obj)
-// obj.name = 'Jane' -> Error: Cannot assign to read only property.
-
-/**
- * Seal
- * - Prevents adding or removing properties, but allows modifying existing property values.
- */
-obj = { name: 'John', age: 30 }
-Object.seal(obj)
-// obj.surname = 'Doe' -> Error: Cannot add property surname, object is not extensible.
-
-/**
- * Is Frozen
- * - Returns true if the object is frozen (no changes, additions, or deletions permitted).
- * - Output: true
- */
-obj = { name: 'John', age: 30 }
-Object.freeze(obj)
-console.log(Object.isFrozen(obj))
-
-/**
- * Is Sealed
- * - Returns true if the object is sealed (no structure changes, but values can mutate).
- * - Output: true
- */
-obj = { name: 'John', age: 30 }
-Object.seal(obj)
-console.log(Object.isSealed(obj))
 
 //==================================================================================================
 // Value Comparison
