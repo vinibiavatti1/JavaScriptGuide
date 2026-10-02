@@ -3,7 +3,7 @@
  *
  * ES6 Classes are syntactic sugar over JavaScript's existing prototype-based inheritance model.
  * They provide a cleaner, more declarative syntax for creating objects, handling inheritance,
- * encapsulating private fields, and managing constructor functions.
+ * encapsulating private properties, and managing constructor functions.
  *
  * Key Concepts:
  * - Syntactic Sugar: Classes do not introduce a new object-oriented inheritance model to JS.
@@ -18,31 +18,32 @@
 
 /**
  * Class Declaration
- * - Demonstrates public/private fields, static members, constructors, getters/setters, and methods.
+ * Defines a blueprint for creating objects using the 'class' keyword.
  */
 class Person {
 
     /**
-     * Public Field
-     * - Declared directly on the instance, outside the constructor.
+     * Public Property
+     * - Declares an instance property accessible from outside the class.
      */
     name = 'Unknown'
 
     /**
-     * Private Field
-     * - Hard-enforced by the V8 runtime. Inaccessible outside the class body (throws SyntaxError).
+     * Private Property
+     * - Declares a private instance property prefixed with '#' accessible only within the class
+     *   body.
      */
     #age = 0
 
     /**
-     * Static Field
-     * - Stored on the class function object itself, not on instantiated objects.
+     * Static Property
+     * - Defines a property stored on the class itself rather than on instances.
      */
     static defaultName = 'Unknown'
 
     /**
      * Constructor
-     * - Special method called automatically when creating an instance with 'new'.
+     * - Special method for initializing newly instantiated objects created with the 'new' operator.
      */
     constructor(name, age = 0) {
         this.name = name
@@ -51,7 +52,7 @@ class Person {
 
     /**
      * Public Method
-     * - Stored on Person.prototype to optimize memory across instances.
+     * - Instance function attached to the class prototype, accessible by all instance objects.
      */
     sayName() {
         console.log(this.name)
@@ -59,7 +60,7 @@ class Person {
 
     /**
      * Private Method
-     * - Accessible only within internal class routines.
+     * - Encapsulated helper function prefixed with '#' only callable inside the class.
      */
     #sayAge() {
         console.log(this.age)
@@ -67,17 +68,15 @@ class Person {
 
     /**
      * Static Method
-     * - Invoked directly on the Class (Person.defaultPerson()).
-     * - Within a static method, 'this' refers to the Class constructor itself.
+     * - Utility function attached directly to the class rather than instance objects.
      */
     static defaultPerson() {
         return new this(this.defaultName)
     }
 
     /**
-     * Property (Getter & Setter Acessors)
-     * - Bind an object property to a function when looking up or assigning values.
-     * - Allows validation or encapsulation around private fields (#age).
+     * Property Acessors (Getter & Setter)
+     * - Defines custom methods that execute on property read ('get') or write ('set') operations.
      */
     get age() {
         return this.#age
@@ -89,7 +88,7 @@ class Person {
 
 /**
  * Class Instance
- * - Instantiates 'Person' and demonstrates method call and setter interaction.
+ * - Instantiates a new object with 'new', mutates a property via setter, and accesses getter.
  * - Output: John | 35
  */
 const person = new Person('John', 30)
@@ -99,7 +98,8 @@ console.log(person.age)
 
 /**
  * Static Context
- * - Demonstrates accessing static factory methods without instantiating the main class first.
+ * - Invokes a static factory method directly on the class constructor without creating manual
+ *   instances.
  * - Output: Person { name: 'Unknown' }
  */
 const defaultPerson = Person.defaultPerson()
@@ -157,9 +157,7 @@ console.log(employee instanceof Person)
 
 /**
  * Static Initializer
- * - Evaluates logic once when the class definition is loaded into memory by the engine.
- * - Allows complex initialization routines (e.g., try/catch, static property setups) and provides
- *   privileged access to private fields within the static scope.
+ * - Executes logic automatically when the class definition is evaluated by the runtime.
  */
 class Logger {
     static {
@@ -169,34 +167,38 @@ class Logger {
 
 /**
  * Example
- * - The static block executes as soon as the class is defined/evaluated, even before 'new Logger()'
- *   is invoked.
+ * - Shows that static initialization blocks execute during class definition loading before
+ *   instantiation.
+ * - Note: The static block executes as soon as the class is defined/evaluated, even before
+ *   'new Logger()' is invoked.
  * - Output: Logger Initialized!
  */
 const logger = new Logger()
 
 //==================================================================================================
-// Private Field Verification
+// Private Property Verification
 //==================================================================================================
 
 /**
- * Private Field Verification ('in' Operator)
- * - Safely checks if an object contains a specific private field without throwing a TypeError.
- * - Unlike public properties (which check prototype chains), private brand checking checks solely
- *   for internal private brand slots directly attached to the instance.
+ * Private Property Verification ('in' Operator)
+ * - Safely checks for the presence of a private property on an object without throwing errors.
+ * - Unlike 'instanceof', this check remains reliable even across different execution contexts
+ *   (e.g., iframes, workers, or separate Node.js VM contexts) where prototype chains fail.
  */
-class Validator {
-    #secret = 42
+class Entity {
+    #id = 1
 
-    static isInstance(obj) {
-        return #secret in obj
+    static isEntity(obj) {
+        return #id in obj
     }
 }
 
 /**
  * Brand Checking Usage
+ * - Safely checks if an external or untrusted object is a valid instance containing the private
+ *   field.
  * - Output: true | false
  */
-const v = new Validator()
-console.log(Validator.isInstance(v))  // Evaluates true
-console.log(Validator.isInstance({})) // Evaluates false without throwing a TypeError
+const entity = new Entity()
+console.log(Entity.isInstance(entity)) // Evaluates true
+console.log(Entity.isInstance({}))     // Evaluates false without throwing a TypeError
