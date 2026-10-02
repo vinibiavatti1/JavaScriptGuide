@@ -210,7 +210,7 @@ const clazz = 'Person'
  *   ecosystem.
  */;
 `
-n                - Count, length, Quantity, Number
+n                - Count, Length, Quantity, Number
 arr, obj, st, mp - Array, Object, Set, Map
 i, j, k          - Loop indexes
 x, y, z          - Coordinates, Math, Geometry
