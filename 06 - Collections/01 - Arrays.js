@@ -111,8 +111,8 @@ for (let i = 0; i < arr.length; i++) {
  * - Output: A | B | C
  */
 arr = ['A', 'B', 'C']
-for (let value of arr) {
-    console.log(value)
+for (let val of arr) {
+    console.log(val)
 }
 
 /**
@@ -131,8 +131,8 @@ for (let i of arr.keys()) {
  * - Output: 0 A | 1 B | 2 C
  */
 arr = ['A', 'B', 'C']
-for (let [i, value] of arr.entries()) {
-    console.log(i, value)
+for (let [i, val] of arr.entries()) {
+    console.log(i, val)
 }
 
 /**
@@ -141,7 +141,7 @@ for (let [i, value] of arr.entries()) {
  * - Output: 0 A | 1 B | 2 C
  */
 arr = ['A', 'B', 'C']
-arr.forEach((value, i) => console.log(i, value))
+arr.forEach((val, i) => console.log(i, val))
 
 //==================================================================================================
 // Destructure & Spread
@@ -348,7 +348,7 @@ console.log(arr.includes('B'))
  * - Output: [ 'A', 'C' ]
  */
 arr = ['A', 'B', 'C']
-result = arr.filter(value => value !== 'B')
+result = arr.filter(val => val !== 'B')
 console.log(result)
 
 /**
@@ -358,7 +358,7 @@ console.log(result)
  * - Output: AA
  */
 arr = ['A', 'AA', 'AAA']
-result = arr.find(value => value.length === 2)
+result = arr.find(val => val.length === 2)
 console.log(result)
 
 /**
@@ -368,7 +368,7 @@ console.log(result)
  * - Output: CC
  */
 arr = ['AA', 'BB', 'CC']
-result = arr.findLast(value => value.length === 2)
+result = arr.findLast(val => val.length === 2)
 console.log(result)
 
 /**
@@ -378,7 +378,7 @@ console.log(result)
  * - Output: 1
  */
 arr = ['A', 'AA', 'AAA']
-result = arr.findIndex(value => value === 'AA')
+result = arr.findIndex(val => val === 'AA')
 console.log(result)
 
 /**
@@ -388,7 +388,7 @@ console.log(result)
  * - Output: 2
  */
 arr = ['AA', 'BB', 'CC']
-result = arr.findLastIndex(value => value.length === 2)
+result = arr.findLastIndex(val => val.length === 2)
 console.log(result)
 
 /**
@@ -398,7 +398,7 @@ console.log(result)
  * - Output: [ 'a', 'b', 'c' ]
  */
 arr = ['A', 'B', 'C']
-result = arr.map(value => value.toLowerCase())
+result = arr.map(val => val.toLowerCase())
 console.log(result)
 
 /**
@@ -419,7 +419,7 @@ console.log(result)
  * - Output: [ 'John', 'Jane' ]
  */
 arr = [{ name: 'John', age: 30 }, { name: 'Jane', age: 28 }]
-result = arr.flatMap(value => value.name)
+result = arr.flatMap(val => val.name)
 console.log(result)
 
 /**
@@ -429,7 +429,7 @@ console.log(result)
  * - Output: 6
  */
 arr = [1, 2, 3]
-result = arr.reduce((acc, value) => acc + value, 0)
+result = arr.reduce((acc, curr) => acc + curr, 0)
 console.log(result)
 
 /**
@@ -438,7 +438,7 @@ console.log(result)
  * - Output: CBA
  */
 arr = ['A', 'B', 'C']
-result = arr.reduceRight((acc, value) => acc + value, '')
+result = arr.reduceRight((acc, curr) => acc + curr, '')
 console.log(result)
 
 /**
@@ -447,7 +447,7 @@ console.log(result)
  * - Output: true
  */
 arr = ['A', 'B', 'C']
-result = arr.some(value => value === 'B')
+result = arr.some(val => val === 'B')
 console.log(result)
 
 /**
@@ -456,5 +456,5 @@ console.log(result)
  * - Output: true
  */
 arr = ['B', 'B', 'B']
-result = arr.every(value => value === 'B')
+result = arr.every(val => val === 'B')
 console.log(result)

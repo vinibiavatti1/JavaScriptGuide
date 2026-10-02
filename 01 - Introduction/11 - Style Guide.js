@@ -204,6 +204,35 @@ class AppError extends Error { }
  */
 const clazz = 'Person'
 
+/**
+ * Special Names
+ * - A cheatsheet of shorthand and idiomatic variable names widely used across the JS/Node
+ *   ecosystem.
+ */;
+`
+n                - Count, length, Quantity, Number
+arr, obj, st, mp - Array, Object, Set, Map
+i, j, k          - Loop indexes
+x, y, z          - Coordinates, Math, Geometry
+key, val         - Key-Value Structures
+entry            - Key-Value Pairs
+req, res         - HTTP Request, HTTP Response
+acc, curr        - Accumulator, Current Value, Reductions
+callback         - Continuation Function, Asynchronous Completion
+fn               - Higher-Order Functions
+emit, on         - Event Triggers, Event Listeners, Pub/Sub
+err              - Errors
+buf              - Buffers
+ctx              - Contexts
+evt              - Events
+el               - DOM Elements
+ref              - DOM Element References
+args             - Function Arguments, CLI Inputs
+tmp              - Temporary Variables
+src, dest        - Source, Destination
+rs, ws           - Read Stream, Write Stream
+`;
+
 //==================================================================================================
 // Code Conventions
 //==================================================================================================

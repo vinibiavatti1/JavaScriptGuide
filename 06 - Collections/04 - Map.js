@@ -114,8 +114,8 @@ console.log(mp)
  * - Output: name John | age 30
  */
 mp = new Map([['name', 'John'], ['age', 30]])
-for (let [key, value] of mp) {
-    console.log(key, value)
+for (let [key, val] of mp) {
+    console.log(key, val)
 }
 
 /**
@@ -134,8 +134,8 @@ for (let key of mp.keys()) {
  * - Output: John | 30
  */
 mp = new Map([['name', 'John'], ['age', 30]])
-for (let value of mp.values()) {
-    console.log(value)
+for (let val of mp.values()) {
+    console.log(val)
 }
 
 /**
@@ -145,7 +145,7 @@ for (let value of mp.values()) {
  * - Output: name John | age 30
  */
 mp = new Map([['name', 'John'], ['age', 30]])
-mp.forEach((value, key) => console.log(key, value))
+mp.forEach((val, key) => console.log(key, val))
 
 //==================================================================================================
 // Destructure & Spread

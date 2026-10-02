@@ -109,8 +109,8 @@ for (let key of Object.keys(obj)) {
  * - Output: John | 30
  */
 obj = { name: 'John', age: 30 }
-for (let value of Object.values(obj)) {
-    console.log(value)
+for (let val of Object.values(obj)) {
+    console.log(val)
 }
 
 /**
@@ -119,8 +119,8 @@ for (let value of Object.values(obj)) {
  * - Output: name John | age 30
  */
 obj = { name: 'John', age: 30 }
-for (let [key, value] of Object.entries(obj)) {
-    console.log(key, value)
+for (let [key, val] of Object.entries(obj)) {
+    console.log(key, val)
 }
 
 //==================================================================================================
