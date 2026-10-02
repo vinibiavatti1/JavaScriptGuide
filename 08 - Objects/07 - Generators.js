@@ -82,10 +82,10 @@ function* createAccount(initialBalance) {
  */
 const account = createAccount(100)
 console.log(
-    account.next().value,
-    account.next(50).value,
-    account.next(200).value,
-    account.next(-100).value
+    account.next().value,    // Initial balance: 100
+    account.next(50).value,  // Deposits 50  -> 150
+    account.next(200).value, // Deposits 200 -> 350
+    account.next(-100).value // Withdraws 100 -> 250
 )
 
 //==================================================================================================

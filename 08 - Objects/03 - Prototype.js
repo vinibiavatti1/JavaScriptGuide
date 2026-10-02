@@ -42,8 +42,8 @@ Person.prototype.greet = function () {
  *   binds 'this', and executes the constructor.
  * - Output: Hi, I am John
  */
-const p = new Person('John', 30)
-p.greet()
+const person = new Person('John', 30)
+person.greet()
 
 //==================================================================================================
 // Inheritance
@@ -84,10 +84,10 @@ Employee.prototype.work = function () {
  * - Example: e -> Employee.prototype -> Person.prototype -> Object.prototype
  * - Output: John is working as an admin | Hi, I am John
  */
-const e = new Employee('John', 30, 'admin')
-e.work()     // From: Employee.prototype
-e.greet()    // From: Person.prototype
-e.toString() // From: Object.prototype
+const employee = new Employee('John', 30, 'admin')
+employee.work()     // From: Employee.prototype
+employee.greet()    // From: Person.prototype
+employee.toString() // From: Object.prototype
 
 //==================================================================================================
 // Prototype Utilities
@@ -101,7 +101,7 @@ e.toString() // From: Object.prototype
  *   chain.
  * - Output: true | true
  */
-console.log(Object.getPrototypeOf(e) === Employee.prototype)
+console.log(Object.getPrototypeOf(employee) === Employee.prototype)
 console.log(Object.getPrototypeOf(Employee.prototype) === Person.prototype)
 
 /**
@@ -144,7 +144,7 @@ dog.makeSound()
  * The diagram below demonstrates the prototype chain from the examples above.
  */;
 `
-e (Employee Instance)
+employee (Employee Instance)
 |- name: 'John'
 |- age: 30
 |- role: 'admin'
