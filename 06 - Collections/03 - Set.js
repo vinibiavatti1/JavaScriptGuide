@@ -93,7 +93,7 @@ console.log(st)
  * - Output: A | B | C
  */
 st = new Set(['A', 'B', 'C'])
-for (let value of st) {
+for (const value of st) {
     console.log(value)
 }
 

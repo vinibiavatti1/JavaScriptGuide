@@ -45,7 +45,7 @@ for (let i = 0, j = 6; i < 3 && j > 3; i++, j--) {
  * - Output: A | B | C
  */
 const list = ['A', 'B', 'C']
-for (let item of list) {
+for (const item of list) {
     console.log(item)
 }
 
@@ -55,6 +55,16 @@ for (let item of list) {
  * - Output: name John | age 30
  */
 const obj = { name: 'John', age: 30 }
-for (let key in obj) {
+for (const key in obj) {
     console.log(key, obj[key])
+}
+
+/**
+ * For Await
+ * - Iterates over async iterable objects (like streams or async generators), awaiting each Promise.
+ * - Output: A | B
+ */
+const promises = [Promise.resolve('A'), Promise.resolve('B')]
+for await (const val of promises) {
+    console.log(val)
 }

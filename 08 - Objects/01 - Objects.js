@@ -89,7 +89,7 @@ console.log(obj.greet())
  * - Output: name John | age 30
  */
 obj = { name: 'John', age: 30 }
-for (let key in obj) {
+for (const key in obj) {
     console.log(key, obj[key])
 }
 
@@ -99,7 +99,7 @@ for (let key in obj) {
  * - Output: name | age
  */
 obj = { name: 'John', age: 30 }
-for (let key of Object.keys(obj)) {
+for (const key of Object.keys(obj)) {
     console.log(key)
 }
 
@@ -109,7 +109,7 @@ for (let key of Object.keys(obj)) {
  * - Output: John | 30
  */
 obj = { name: 'John', age: 30 }
-for (let val of Object.values(obj)) {
+for (const val of Object.values(obj)) {
     console.log(val)
 }
 
@@ -119,7 +119,7 @@ for (let val of Object.values(obj)) {
  * - Output: name John | age 30
  */
 obj = { name: 'John', age: 30 }
-for (let [key, val] of Object.entries(obj)) {
+for (const [key, val] of Object.entries(obj)) {
     console.log(key, val)
 }
 

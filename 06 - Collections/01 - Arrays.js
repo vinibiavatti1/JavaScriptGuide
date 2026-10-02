@@ -111,7 +111,7 @@ for (let i = 0; i < arr.length; i++) {
  * - Output: A | B | C
  */
 arr = ['A', 'B', 'C']
-for (let val of arr) {
+for (const val of arr) {
     console.log(val)
 }
 
@@ -121,7 +121,7 @@ for (let val of arr) {
  * - Output: 0 | 1 | 2
  */
 arr = ['A', 'B', 'C']
-for (let i of arr.keys()) {
+for (const i of arr.keys()) {
     console.log(i)
 }
 
@@ -131,7 +131,7 @@ for (let i of arr.keys()) {
  * - Output: 0 A | 1 B | 2 C
  */
 arr = ['A', 'B', 'C']
-for (let [i, val] of arr.entries()) {
+for (const [i, val] of arr.entries()) {
     console.log(i, val)
 }
 

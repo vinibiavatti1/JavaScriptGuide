@@ -67,14 +67,25 @@ try {
 /**
  * Try Catch Finally
  * - Executes the 'finally' block guaranteed after try/catch completion, regardless of outcome.
- * - Output: Cannot divide by zero | finally...
+ * - Output: Cannot divide by zero | finally
  */
 try {
     div(1, 0)
 } catch (err) {
     console.log(err.message)
 } finally {
-    console.log('finally...')
+    console.log('finally')
+}
+
+/**
+ * Try Finally (Cleanup)
+ * - Executes the 'finally' block unconditionally for cleanup, letting errors propagate if thrown.
+ * - Output: operation | cleanup
+ */
+try {
+    console.log('operation')
+} finally {
+    console.log('cleanup')
 }
 
 //==================================================================================================

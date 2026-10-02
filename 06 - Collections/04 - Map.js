@@ -114,7 +114,7 @@ console.log(mp)
  * - Output: name John | age 30
  */
 mp = new Map([['name', 'John'], ['age', 30]])
-for (let [key, val] of mp) {
+for (const [key, val] of mp) {
     console.log(key, val)
 }
 
@@ -124,7 +124,7 @@ for (let [key, val] of mp) {
  * - Output: name | age
  */
 mp = new Map([['name', 'John'], ['age', 30]])
-for (let key of mp.keys()) {
+for (const key of mp.keys()) {
     console.log(key)
 }
 
@@ -134,7 +134,7 @@ for (let key of mp.keys()) {
  * - Output: John | 30
  */
 mp = new Map([['name', 'John'], ['age', 30]])
-for (let val of mp.values()) {
+for (const val of mp.values()) {
     console.log(val)
 }
 

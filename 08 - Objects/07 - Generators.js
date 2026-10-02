@@ -51,7 +51,7 @@ console.log(
  * - Output: 0 | 1 | 2
  */
 numbers = range(3)
-for (let n of numbers) {
+for (const n of numbers) {
     console.log(n)
 }
 

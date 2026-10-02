@@ -436,7 +436,7 @@ console.log(result)
  */
 str = 'Hello World'
 result = str.matchAll(/[A-Za-z]+/g)
-for (let entry of result) console.log(entry)
+for (const entry of result) console.log(entry)
 
 /**
  * Search

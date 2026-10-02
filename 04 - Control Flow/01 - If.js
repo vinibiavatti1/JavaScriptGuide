@@ -66,7 +66,7 @@ if (x > 0) {
  * - Checks whether an object has in its prototype chain the prototype properties of a constructor.
  * - Output: x is an Array
  */
-let x = [1, 2, 3]
+x = [1, 2, 3]
 if (x instanceof Array) {
     console.log('x is an Array')
 }
