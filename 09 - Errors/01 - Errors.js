@@ -17,7 +17,7 @@
 /**
  * Built In Errors
  * - Standard native exceptions provided by JavaScript to represent common execution failures.
- */
+ */;
 `
 Error          - Generic base class for all standard runtime errors.
 TypeError      - Thrown when a value is not of the expected type or operation is invalid.
