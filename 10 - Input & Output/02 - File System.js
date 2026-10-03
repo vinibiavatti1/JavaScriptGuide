@@ -83,8 +83,8 @@ await fs.rmdir('.\\.resources\\custom-renamed')
  * - Note: Call toString() or specify an encoding parameter like utf-8 to obtain a string.
  * - Output: Hello
  */
-let content = await fs.readFile('.\\.resources\\file.txt')
-console.log(content.toString())
+let buf = await fs.readFile('.\\.resources\\file.txt')
+console.log(buf.toString())
 
 /**
  * Append File
@@ -110,5 +110,5 @@ await fs.writeFile('.\\.resources\\file.txt', 'Hello')
  * - Note: Pass option { withFileTypes: true } to receive Dirent objects with type checks.
  * - Output: data.json | file.txt
  */
-content = await fs.readdir('.\\.resources')
-content.forEach(entry => console.log(entry))
+const dir = await fs.readdir('.\\.resources')
+dir.forEach(entry => console.log(entry))

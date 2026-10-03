@@ -39,3 +39,20 @@ const y7 = Temporal.PlainDateTime.from('2026-09-30T13:09:25')
  */
 const x = 3.14
 console.log(typeof x)
+
+/**
+ * Deep Clone
+ * - Creates a deep copy of an object using the native structuredClone function.
+ * - Note: Handles nested objects, arrays, and complex types (Dates, Maps, Sets) without reference
+ *   sharing.
+ * - Output: { name: 'John', address: { street: 'Main Street', number: 123 } }
+ */
+const obj = {
+    name: 'John',
+    address: {
+        street: 'Main Street',
+        number: 123
+    }
+}
+const clone = structuredClone(obj)
+console.log(clone)

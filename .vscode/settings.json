@@ -8,5 +8,9 @@
     "editor.rulers": [
         100
     ],
-    "code-runner.ignoreSelection": true
+    "code-runner.ignoreSelection": true,
+    "eslint.enable": false,
+    "javascript.diagnostics.unusedParameters": "ignore",
+    "javascript.diagnostics.unusedLocalVariables": "ignore",
+    "editor.showUnused": false
 }

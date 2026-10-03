@@ -212,16 +212,3 @@ console.log(obj)
 obj = { name: 'John', age: 30 }
 Object.assign(obj, { role: 'admin' })
 console.log(obj)
-
-//==================================================================================================
-// Value Comparison
-//==================================================================================================
-
-/**
- * Object.is
- * - Generic value-equality algorithm for primitives and object references.
- * - Differs from '===' by handling NaN correctly and distinguishing -0 from +0.
- * - Output: true false
- */
-console.log(Object.is(NaN, NaN))
-console.log(Object.is(-0, +0))

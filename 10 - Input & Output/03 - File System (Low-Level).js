@@ -33,8 +33,8 @@ x   - Create Only
  * - Output: Hello
  */
 let file = await fs.open('.\\.resources\\file.txt')
-let content = await file.readFile()
-console.log(content.toString())
+let buf = await file.readFile()
+console.log(buf.toString())
 file.close()
 
 /**

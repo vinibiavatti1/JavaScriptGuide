@@ -109,3 +109,12 @@ console.log(n, Number.isFinite(n))
  */
 n = 0 / 0
 console.log(n, Number.isNaN(n))
+
+/**
+ * Special Comparison
+ * - Generic value-equality algorithm for primitives and object references.
+ * - Differs from '===' by handling NaN correctly and distinguishing -0 from +0.
+ * - Output: true false
+ */
+console.log(Object.is(NaN, NaN))
+console.log(Object.is(-0, +0))
