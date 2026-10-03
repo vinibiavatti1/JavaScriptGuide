@@ -65,7 +65,7 @@ file.close()
  * Open Directory
  * - Opens a directory stream returning an async iterable Dir handle for sequential scanning.
  * - Note: Iterates memory-efficiently over entries without loading all filenames at once.
- * - Output: data.json | file.txt
+ * - Output: data.json | file.txt | ...
  */
 const dir = await fs.opendir('.\\.resources')
 for await (const entry of dir) {

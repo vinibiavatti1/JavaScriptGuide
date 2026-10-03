@@ -108,7 +108,7 @@ await fs.writeFile('.\\.resources\\file.txt', 'Hello')
  * Read Directory
  * - Reads directory contents and returns an array of string filenames.
  * - Note: Pass option { withFileTypes: true } to receive Dirent objects with type checks.
- * - Output: data.json | file.txt
+ * - Output: data.json | file.txt | ...
  */
 const dir = await fs.readdir('.\\.resources')
 dir.forEach(entry => console.log(entry))
