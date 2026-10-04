@@ -26,9 +26,8 @@ server.on('request', (req, res) => {
  * - Binds the server to the specified port and begins accepting incoming connections.
  * - Output: Server listening on http://localhost:8000
  */
-const PORT = 8000
-server.listen(PORT, () => {
-    console.log(`Server listening on http://localhost:${PORT}`)
+server.listen(8000, () => {
+    console.log('Server listening on http://localhost:8000')
 })
 
 /**
