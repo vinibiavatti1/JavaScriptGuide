@@ -22,20 +22,28 @@ console.log(obj)
 //==================================================================================================
 
 /**
- * Read Proeprty
+ * Has Property
+ * - Checks if a property exists on an object or its prototype chain using the 'in' operator.
+ * - Output: true
+ */
+obj = { name: 'John' }
+console.log('name' in obj)
+
+/**
+ * Get Property
  * - Reads a property value using standard dot notation.
  * - Output: John Doe
  */
-obj = { name: 'John', age: 30 }
+obj = { name: 'John' }
 console.log(obj.name)
 
 /**
  * Set Property
  * - Adds a new key-value pair or updates an existing property on the target object.
- * - Output: { name: 'John', age: 30, role: 'admin' }
+ * - Output: { name: 'John', age: 30 }
  */
-obj = { name: 'John', age: 30 }
-obj.role = 'admin'
+obj = { name: 'John' }
+obj.age = 30
 console.log(obj)
 
 /**
@@ -48,22 +56,13 @@ delete obj.age
 console.log(obj)
 
 /**
- * Computed Properties
- * - Uses dynamic bracket notation and computed property names.
+ * Dynamic Property
+ * - Uses dynamic bracket notation to set computed property names.
  * - Output: 30
  */
-const propName = 'age'
-obj = { name: 'John', [propName]: 30 }
-console.log(obj[propName])
-
-/**
- * Check Property Exists
- * - Safely checks if an object owns a direct property without checking its prototype chain
- *   (ES2022).
- * - Output: false
- */
-obj = { name: 'John' }
-console.log(Object.hasOwn(obj, 'age'))
+const prop = 'age'
+obj = { name: 'John', [prop]: 30 }
+console.log(obj[prop])
 
 /**
  * Methods
@@ -131,7 +130,7 @@ for (const [key, val] of Object.entries(obj)) {
  * Freeze
  * - Prevents adding, deleting, or reassigning existing properties (shallow immutability).
  */
-obj = { name: 'John', age: 30 }
+obj = { name: 'John' }
 Object.freeze(obj)
 // obj.name = 'Jane' -> Error: Cannot assign to read only property.
 
@@ -139,7 +138,7 @@ Object.freeze(obj)
  * Seal
  * - Prevents adding or removing properties, but allows modifying existing property values.
  */
-obj = { name: 'John', age: 30 }
+obj = { name: 'John' }
 Object.seal(obj)
 // obj.surname = 'Doe' -> Error: Cannot add property surname, object is not extensible.
 
@@ -148,7 +147,7 @@ Object.seal(obj)
  * - Returns true if the object is frozen (no changes, additions, or deletions permitted).
  * - Output: true
  */
-obj = { name: 'John', age: 30 }
+obj = { name: 'John' }
 Object.freeze(obj)
 console.log(Object.isFrozen(obj))
 
@@ -157,7 +156,7 @@ console.log(Object.isFrozen(obj))
  * - Returns true if the object is sealed (no structure changes, but values can mutate).
  * - Output: true
  */
-obj = { name: 'John', age: 30 }
+obj = { name: 'John' }
 Object.seal(obj)
 console.log(Object.isSealed(obj))
 
@@ -207,8 +206,16 @@ console.log(obj)
 /**
  * Assign
  * - Copies enumerable own properties from source objects into a target object (mutates target).
- * - Output: { name: 'John', age: 30, role: 'admin' }
+ * - Output: { name: 'John', age: 30 }
  */
-obj = { name: 'John', age: 30 }
-Object.assign(obj, { role: 'admin' })
+obj = { name: 'John' }
+Object.assign(obj, { age: 30 })
 console.log(obj)
+
+/**
+ * Has Own
+ * - Safely checks if an object owns a direct property without checking its prototype chain.
+ * - Output: false
+ */
+obj = { name: 'John' }
+console.log(Object.hasOwn(obj, 'age'))
