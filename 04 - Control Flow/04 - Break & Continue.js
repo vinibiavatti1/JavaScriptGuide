@@ -1,5 +1,5 @@
 /**
- * Break and Continue
+ * Break & Continue
  *
  * Control flow statements used to alter the execution behavior of loops and blocks. 'break' exits a
  * loop or block entirely, while 'continue' skips to the next iteration.
