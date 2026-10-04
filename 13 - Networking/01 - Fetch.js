@@ -84,8 +84,14 @@ response.headers.forEach((val, key) => console.log(key, val))
 //==================================================================================================
 
 /**
- * Processing Response
- * - Checks status validity via 'response.ok' (HTTP 200-299) and parses JSON body.
+ * Processing JSON Response
+ * - The 'response.ok' boolean property checks if the HTTP status code is in the 200-299 range.
+ * - Response parsing methods (all return Promises):
+ *   - 'json()': Parses response body as JSON object.
+ *   - 'text()': Parses response body as plain text/string.
+ *   - 'arrayBuffer()': Reads response body as raw binary ArrayBuffer (ideal for files/buffers).
+ *   - 'blob()': Reads response body as a Blob object (useful for files/media in browsers).
+ *   - 'bytes()': Reads response body as a Uint8Array (modern Node.js v18+ / Web API).
  * - Output: { name: 'John', age: 30 }
  */
 response = await fetch('https://api.dev/employees/123')
