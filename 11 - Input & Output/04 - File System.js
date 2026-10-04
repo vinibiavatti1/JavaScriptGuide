@@ -16,29 +16,29 @@ import fs from 'node:fs/promises'
  * - Creates a new file or overwrites an existing file with specified contents.
  * - Note: Defaults to UTF-8 encoding when passing a string value.
  */
-await fs.writeFile('.\\.resources\\custom.txt', 'Hello World')
+await fs.writeFile('./.resources/custom.txt', 'Hello World')
 
 /**
  * Copy File
  * - Copies an individual file from a source path to a destination path.
  * - Note: Works exclusively on single files and throws EPERM when passed a directory path.
  */
-await fs.copyFile('.\\.resources\\custom.txt', '.\\.resources\\custom-copy.txt')
+await fs.copyFile('./.resources/custom.txt', './.resources/custom-copy.txt')
 
 /**
  * Rename File
  * - Renames or moves a file from the source path to the destination path.
  * - Note: Overwrites the target file destination if it already exists.
  */
-await fs.rename('.\\.resources\\custom-copy.txt', '.\\.resources\\custom-renamed.txt')
+await fs.rename('./.resources/custom-copy.txt', './.resources/custom-renamed.txt')
 
 /**
  * Delete File
  * - Removes a specified file path from the file system using the rm utility.
  * - Note: Preferred over unlink in modern Node.js for general removal operations.
  */
-await fs.rm('.\\.resources\\custom.txt')
-await fs.rm('.\\.resources\\custom-renamed.txt')
+await fs.rm('./.resources/custom.txt')
+await fs.rm('./.resources/custom-renamed.txt')
 
 //==================================================================================================
 // Directory Operations
@@ -49,29 +49,29 @@ await fs.rm('.\\.resources\\custom-renamed.txt')
  * - Creates a new directory at the specified target path.
  * - Note: Pass option { recursive: true } to create parent directories without throwing errors.
  */
-await fs.mkdir('.\\.resources\\custom')
+await fs.mkdir('./.resources/custom')
 
 /**
  * Copy Directory
  * - Copies entire directory structures including subfolders and contents recursively.
  * - Note: Requires mandatory { recursive: true } option; omitting it throws an ERR_FS_EISDIR error.
  */
-await fs.cp('.\\.resources\\custom', '.\\.resources\\custom-copy', { recursive: true })
+await fs.cp('./.resources/custom', './.resources/custom-copy', { recursive: true })
 
 /**
  * Rename Directory
  * - Renames or relocates an entire directory tree to a new target path.
  * - Note: Operates atomically across paths located on the same logical drive.
  */
-await fs.rename('.\\.resources\\custom-copy', '.\\.resources\\custom-renamed')
+await fs.rename('./.resources/custom-copy', './.resources/custom-renamed')
 
 /**
  * Delete Directory
  * - Removes an empty directory from the file system using rmdir.
  * - Note: Use fs.rm with { recursive: true } to remove directories containing files or subfolders.
  */
-await fs.rmdir('.\\.resources\\custom')
-await fs.rmdir('.\\.resources\\custom-renamed')
+await fs.rmdir('./.resources/custom')
+await fs.rmdir('./.resources/custom-renamed')
 
 //==================================================================================================
 // IO File Operations
@@ -83,7 +83,7 @@ await fs.rmdir('.\\.resources\\custom-renamed')
  * - Note: Call toString() or specify an encoding parameter like utf-8 to obtain a string.
  * - Output: Hello
  */
-let buf = await fs.readFile('.\\.resources\\file.txt')
+let buf = await fs.readFile('./.resources/file.txt')
 console.log(buf.toString())
 
 /**
@@ -91,14 +91,14 @@ console.log(buf.toString())
  * - Appends data to an existing file, creating the file first if it does not exist.
  * - File Content: Hello World
  */
-await fs.appendFile('.\\.resources\\file.txt', 'World')
+await fs.appendFile('./.resources/file.txt', 'World')
 
 /**
  * Write File
  * - Writes data to a file, replacing the target file entirely if it already exists.
  * - File Content: Hello
  */
-await fs.writeFile('.\\.resources\\file.txt', 'Hello')
+await fs.writeFile('./.resources/file.txt', 'Hello')
 
 //==================================================================================================
 // Directory IO Operations
@@ -110,5 +110,5 @@ await fs.writeFile('.\\.resources\\file.txt', 'Hello')
  * - Note: Pass option { withFileTypes: true } to receive Dirent objects with type checks.
  * - Output: data.json | file.txt | ...
  */
-const dir = await fs.readdir('.\\.resources')
+const dir = await fs.readdir('./.resources')
 dir.forEach(entry => console.log(entry))

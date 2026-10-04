@@ -13,7 +13,7 @@ import fs from 'node:fs/promises'
 const ac = new AbortController()
 setTimeout(() => ac.abort(), 2000) // Automatically aborts watching after 2 seconds
 try {
-    const watcher = fs.watch('.\\.resources', { signal: ac.signal })
+    const watcher = fs.watch('./.resources', { signal: ac.signal })
     for await (const event of watcher) {
         if (event.eventType === 'change') {
             console.log(`File content updated: ${filename}`)

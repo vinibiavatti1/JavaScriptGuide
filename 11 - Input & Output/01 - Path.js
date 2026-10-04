@@ -3,6 +3,8 @@
  *
  * Provides utilities for working with file and directory paths in Node.js. Behavior varies based on
  * the operating system (Windows vs. POSIX).
+ *
+ * Note: Always prefer forward slashes ('/') in input paths for cross-platform support.
  */
 import path from 'node:path'
 
@@ -40,7 +42,7 @@ console.log(result, process.cwd())
  *   directory.
  * - Output: ..
  */
-result = path.relative('C:\\directory\\src', 'C:\\directory')
+result = path.relative('C:/directory/src', 'C:/directory')
 console.log(result)
 
 /**
@@ -48,7 +50,7 @@ console.log(result)
  * - Normalizes a given path, resolving '..' and '.' segments and cleaning duplicate separators.
  * - Output: C:\directory\src
  */
-result = path.normalize('C:\\directory\\bin\\..\\src')
+result = path.normalize('C:/directory/bin/../src')
 console.log(result)
 
 /**
@@ -56,7 +58,7 @@ console.log(result)
  * - Returns the last portion of a path, optionally stripping a trailing extension suffix.
  * - Output: index.js
  */
-result = path.basename('C:\\directory\\src\\index.js')
+result = path.basename('C:/directory/src/index.js')
 console.log(result)
 
 /**
@@ -64,7 +66,7 @@ console.log(result)
  * - Returns the directory name of a path, ignoring the last segment.
  * - Output: C:\directory\src
  */
-result = path.dirname('C:\\directory\\src\\index.js')
+result = path.dirname('C:/directory/src/index.js')
 console.log(result)
 
 /**
@@ -72,7 +74,7 @@ console.log(result)
  * - Returns the extension of the path, from the last '.' to end of string in the last portion.
  * - Output: .js
  */
-result = path.extname('C:\\directory\\src\\index.js')
+result = path.extname('C:/directory/src/index.js')
 console.log(result)
 
 /**
@@ -80,7 +82,7 @@ console.log(result)
  * - Determines if the given path string is an absolute path.
  * - Output: false
  */
-result = path.isAbsolute('.\\src\\index.js')
+result = path.isAbsolute('./src/index.js')
 console.log(result)
 
 /**
@@ -88,16 +90,16 @@ console.log(result)
  * - Determines if a path matches a given glob pattern (Node.js v22+ native utility).
  * - Output: true
  */
-result = path.matchesGlob('C:\\directory\\src\\index.js', '**\\*.js')
+result = path.matchesGlob('C:/directory/src/index.js', '**/*.js')
 console.log(result)
 
 /**
  * To Namespaced Path
  * - Converts a path into an equivalent Win32 namespace-prefixed path to bypass path length limits.
  * - Note: Windows exclusive.
- * - Output: \\?\C:\directory\src\index.js
+ * - Output: /?\C:\directory\src\index.js
  */
-result = path.toNamespacedPath('C:\\directory\\src\\index.js')
+result = path.toNamespacedPath('C:/directory/src/index.js')
 console.log(result)
 
 //==================================================================================================
@@ -109,14 +111,14 @@ console.log(result)
  * - Returns an object whose properties represent significant elements of the path.
  * - Output:
  *   {
- *       root: 'C:\\',
- *       dir: 'C:\\directory\\src',
+ *       root: 'C:/',
+ *       dir: 'C:/directory/src',
  *       base: 'index.js',
  *       ext: '.js',
  *       name: 'index'
  *   }
  */
-let info = path.parse('C:\\directory\\src\\index.js')
+let info = path.parse('C:/directory/src/index.js')
 console.log(info)
 
 /**

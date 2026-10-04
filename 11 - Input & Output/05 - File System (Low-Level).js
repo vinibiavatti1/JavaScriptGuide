@@ -32,7 +32,7 @@ x   - Create Only
  *   streams.
  * - Output: Hello
  */
-let file = await fs.open('.\\.resources\\file.txt')
+let file = await fs.open('./.resources/file.txt')
 let buf = await file.readFile()
 console.log(buf.toString())
 file.close()
@@ -42,7 +42,7 @@ file.close()
  * - Opens a file handle in append mode ('a') positioning the cursor at the end of the file.
  * - File Content: Hello World
  */
-file = await fs.open('.\\.resources\\file.txt', 'a')
+file = await fs.open('./.resources/file.txt', 'a')
 await file.appendFile('World')
 file.close()
 
@@ -53,7 +53,7 @@ file.close()
  *   strings.
  * - File Content: Hello
  */
-file = await fs.open('.\\.resources\\file.txt', 'w')
+file = await fs.open('./.resources/file.txt', 'w')
 await file.writeFile('Hello\n')
 file.close()
 
@@ -67,7 +67,7 @@ file.close()
  * - Note: Iterates memory-efficiently over entries without loading all filenames at once.
  * - Output: data.json | file.txt | ...
  */
-const dir = await fs.opendir('.\\.resources')
+const dir = await fs.opendir('./.resources')
 for await (const entry of dir) {
     console.log(entry.name)
 }

@@ -53,7 +53,7 @@ console.log(data)
  *   'JSON.parse()'.
  * - Output: { name: 'John', age: 30 }
  */
-let buf = await fs.readFile('.\\.resources\\data.json', 'utf-8')
+let buf = await fs.readFile('./.resources/data.json', 'utf-8')
 obj = JSON.parse(buf)
 console.log(obj)
 
@@ -66,4 +66,4 @@ console.log(obj)
  */
 obj = { name: 'John', age: 30 }
 json = JSON.stringify(obj, null, 4)
-await fs.writeFile('.\\.resources\\data.json', json)
+await fs.writeFile('./.resources/data.json', json)
