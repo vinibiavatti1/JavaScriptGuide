@@ -3,7 +3,10 @@
  *
  * Directive prologues are literal string expressions placed at the beginning of a script, module,
  * or function body. They alter engine-level compiler flags (such as V8 parsing mode) or framework
- * runtime execution boundaries. Directives cannot be inspected via Reflection at runtime.
+ * runtime execution boundaries.
+ *
+ * Directives cannot be inspected via Reflection at runtime, and custom directives cannot be created
+ * natively (unrecognized directives are treated as no-op strings).
  */
 
 /**
