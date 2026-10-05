@@ -67,6 +67,15 @@ class Person {
     }
 
     /**
+     * Abstract Method
+     * - Serves as an unimplemented interface contract that child subclasses must override.
+     * - Throws an Error at runtime if invoked directly without subclass implementation.
+     */
+    validate() {
+        throw new Error('not implemented')
+    }
+
+    /**
      * Static Method
      * - Utility function attached directly to the class rather than instance objects.
      */
@@ -188,7 +197,7 @@ const logger = new Logger()
 class Entity {
     #id = 1
 
-    static isEntity(obj) {
+    static isInstance(obj) {
         return #id in obj
     }
 }

@@ -16,7 +16,8 @@
  *
  * Hosting Platforms:
  * - Render (PaaS): The modern free alternative to Heroku. Deploys directly from GitHub, offers
- *   automated SSL, and includes a free tier (spins down after 15 minutes of inactivity).
+ *   automated SSL, and includes a free tier (spins down after 15 minutes of inactivity). Includes a
+ *   free PostgreSQL database which expires after 90 days.
  * - Railway (PaaS): Excellent developer experience with instant deployments and built-in databases
  *   (PostgreSQL, Redis). Generous trial usage with predictable pay-as-you-go pricing.
  * - Vercel / Netlify (Serverless): Best for fullstack Node.js apps (Next.js, Nuxt) or API endpoints
