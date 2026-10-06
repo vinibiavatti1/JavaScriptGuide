@@ -1,92 +1,40 @@
 /**
  * Composite
  *
- * Composes objects into tree structures to represent part-whole hierarchies. Composite lets clients
- * treat individual objects and compositions of objects uniformly through a common component
- * interface.
+ * Composes objects into tree structures to represent part-whole hierarchies, letting clients treat
+ * individual objects and compositions uniformly. In JavaScript, we can implement this functionally
+ * by returning objects that expose a common interface and recursively process nested collections.
  */
-
-/**
- * Abstract Component
- * - Defines the interface for all objects in the composition, including leaves and composites.
- */
-class AbstractElement {
-    render() {
-        throw new Error('not implemented')
+const createFile = (name) => ({
+    name,
+    render(indent = '') {
+        console.log(indent + this.name)
     }
-}
-
-/**
- * Leaf
- * - Represents leaf objects in the composition with no children. Defines behavior for primitive
- *   units.
- */
-class TextElement extends AbstractElement {
-    render() {
-        console.log('<text />')
+})
+const createFolder = (name, ...files) => ({
+    name,
+    files,
+    render(indent = '') {
+        console.log(indent + this.name)
+        this.files.forEach(file => file.render(indent + '  '))
     }
-}
-class ImgElement extends AbstractElement {
-    render() {
-        console.log('<img />')
-    }
-}
-
-/**
- * Composite
- * - Stores child components and implements component interface behavior by delegating work to
- *   children.
- */
-class GroupElement extends AbstractElement {
-    #graphics
-
-    constructor(...graphics) {
-        super()
-        this.#graphics = graphics
-    }
-
-    render() {
-        console.log('<group>')
-        this.#graphics.forEach(graphic => graphic.render())
-        console.log('</group>')
-    }
-}
-
-/**
- * Client
- * - Manipulates objects in the hierarchy through the abstract component interface.
- */
-class Document {
-    render(...graphics) {
-        graphics.forEach(graphic => graphic.render())
-    }
-}
-
-/**
- * Example
- * - Renders a nested tree structure of individual elements and composite groups uniformly.
- */
-const doc = new Document()
-doc.render(
-    new GroupElement(
-        new GroupElement(
-            new TextElement(),
-            new ImgElement(),
-        ),
-        new GroupElement(
-            new TextElement(),
-            new ImgElement(),
+})
+const root =
+    createFolder('root/',
+        createFolder('src/',
+            createFile('main.js'),
+            createFile('test.js')
+        ), createFolder('res/',
+            createFile('img.png'),
+            createFile('ico.png')
         )
     )
-)
+root.render()
 // Output:
-// <group>
-//     <group>
-//         <text />
-//         <img />
-//     </group>
-//     <group>
-//         <text />
-//         <img />
-//     </group>
-// </group>
+// root/
+//   src/
+//     main.js
+//     test.js
+//   res/
+//     img.png
+//     ico.png

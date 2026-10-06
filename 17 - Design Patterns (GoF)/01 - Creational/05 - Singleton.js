@@ -1,33 +1,11 @@
 /**
  * Singleton
  *
- * Ensures a class has only one instance and provides a global point of access to it. In JavaScript,
- * returning an existing instance from the class constructor alters the default 'new' operator
- * behavior to enforce a single shared instance reference across calls.
+ * Ensures a class or resource has only one instance while providing a global point of access to it.
+ * In JavaScript, ES modules naturally implement this pattern by caching imported module instances
+ * upon their first load.
  */
-
-/**
- * Singleton Class
- * - Checks for an existing static instance upon instantiation, returning it if present to avoid
- *   duplicate objects.
- */
-class Database {
-    static #instance
-
-    constructor() {
-        if (Database.#instance) {
-            return Database.#instance
-        }
-        Database.#instance = this
-    }
-}
-
-/**
- * Example
- * - Instantiates the Singleton class twice and verifies that both variables reference the identical
- *   instance.
- */
-const db1 = new Database()
-const db2 = new Database()
+import db1 from '../.resources/db.js'
+import db2 from '../.resources/db.js'
 console.log(db1 === db2)
 // Output: true
