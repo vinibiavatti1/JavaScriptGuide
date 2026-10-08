@@ -28,6 +28,8 @@ const run = function () { }
  * Declaration (As Arrow Function)
  * - Uses a compact syntax with the arrow operator (=>).
  * - Lexically binds the 'this' context from surrounding scope and lacks its own 'arguments'.
+ * - Preferred in Functional Programming due to concise syntax, immutability of bindings, and
+ *   predictable scope.
  */
 const perform = () => { }
 
@@ -94,6 +96,17 @@ function configureUser({ name, ...rest }) {
     console.log(name, rest)
 }
 configureUser({ name: 'John', role: 'admin' })
+
+/**
+ * Spread Arguments
+ * - Expands an iterable (like an Array) into individual arguments during a function call.
+ * - Output: 12
+ */
+function mul(x, y) {
+    return x * y
+}
+const args = [4, 3]
+console.log(mul(...args))
 
 //==================================================================================================
 // Return
@@ -174,7 +187,7 @@ result = noReturn()
 console.log(result)
 
 //==================================================================================================
-// Higher Order Functions (HOF)
+// High Order Functions (HOF)
 //==================================================================================================
 
 /**

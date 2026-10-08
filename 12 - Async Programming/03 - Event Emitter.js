@@ -21,7 +21,7 @@ const emitter = new EventEmitter()
  * Event Handler
  * - Defines a callback function to handle incoming event payloads.
  */
-const handleMessage = (message) => console.log(`Received message: ${message}`)
+const handleMessage = message => console.log(`Received message: ${message}`)
 
 /**
  * Register Listener ('on')
@@ -73,16 +73,49 @@ class PaymentService {
 }
 
 /**
- * Class Event Listener
+ * Event Listener
  * - Subscribes to custom class events via wrapper methods and receives notifications when actions
  *   occur.
- * - Output: Notification received: { paymentId: 123, status: 'success' }
+ * - Output: Payment processed: { paymentId: 123, status: 'success' }
  */
 const paymentService = new PaymentService()
-paymentService.on('processed', (data) => {
-    console.log('Notification received:', data)
-})
+const paymentProcessedHandler = data => console.log('Payment processed:', data)
+paymentService.on('processed', paymentProcessedHandler)
 paymentService.processPayment(123)
+paymentService.off('processed', paymentProcessedHandler)
+
+//==================================================================================================
+// Functional Implementation
+//==================================================================================================
+
+/**
+ * Event-Driven Function
+ * - Encapsulates event management within a closure by delegating subscriptions to a private
+ *   EventEmitter instance.
+ */
+const createOrderService = () => {
+    const emitter = new EventEmitter()
+    return {
+        on: (event, handler) => emitter.on(event, handler),
+        off: (event, handler) => emitter.off(event, handler),
+        processOrder: orderId => {
+            // Process...
+            emitter.emit('processed', { orderId, status: 'success' })
+        }
+    }
+}
+
+/**
+ * Event Listener
+ * - Attaches and removes listeners from a functional service instance to handle custom domain
+ *   events.
+ * - Output: Order processed: { orderId: 1, status: 'success' }
+ */
+const orderService = createOrderService()
+const orderProcessedHandler = data => console.log('Order processed:', data)
+orderService.on('processed', orderProcessedHandler)
+orderService.processOrder(1)
+orderService.off('processed', orderProcessedHandler)
 
 //==================================================================================================
 // Event Emitter Operations

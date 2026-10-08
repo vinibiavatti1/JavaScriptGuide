@@ -7,19 +7,16 @@
  * The example below shows a function returning an anonymous function that increments and logs
  * 'count'. Even though 'createCounter()' has finished executing, the returned inner function holds
  * a private reference to 'count'. The JS Garbage Collector cannot free 'count' because the closure
- * maintains a live binding to it, preserving its state across multiple calls (1 -> 2 -> 3).
- *
- * Output: 1 | 2 | 3
+ * maintains a live binding to it, preserving its state across multiple calls.
  */
 function createCounter() {
     let count = 0 // Enclosed outer variable (persists in memory via closure)
-    return function () {
-        count++
-        console.log(count)
+    return {
+        increment: () => console.log(++count),
+        decrement: () => console.log(--count),
     }
 }
-
 const counter = createCounter()
-counter() // Increments 'count' to 1
-counter() // Increments 'count' to 2
-counter() // Increments 'count' to 3
+counter.increment() // Output: 1
+counter.increment() // Output: 2
+counter.decrement() // Output: 1
