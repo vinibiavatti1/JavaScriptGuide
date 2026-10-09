@@ -110,3 +110,27 @@ class Money {
  */
 const money = new Money(100)
 console.log(money, money + 1, `${money}`)
+
+//==================================================================================================
+// Functional Implementation
+//==================================================================================================
+
+/**
+ * Functional Implementation
+ * - Implements the native 'Symbol.iterator' protocol in a closure-based factory function.
+ * - Note: Generator functions (*) cannot be declared as arrow functions, requiring method syntax.
+ * - Captures arguments directly via lexical scoping, removing any reliance on 'this'.
+ * - Output: A | B | C
+ */
+const createList = (...items) => ({
+    items,
+    *[Symbol.iterator]() {
+        for (const item of items) {
+            yield item
+        }
+    }
+})
+const lst = createList('A', 'B', 'C')
+for (const item of lst) {
+    console.log(item)
+}

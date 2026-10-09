@@ -185,29 +185,3 @@ console.log(result)
 function noReturn() { }
 result = noReturn()
 console.log(result)
-
-//==================================================================================================
-// High Order Functions (HOF)
-//==================================================================================================
-
-/**
- * Function As Argument
- * - Passes a callback function as an argument to be executed with the processed result.
- * - Output: 15
- */
-function mul(x, y, callback) {
-    callback(x * y)
-}
-mul(5, 3, (result) => console.log(result))
-
-/**
- * Function As Return
- * - Returns a new inner function from a higher-order function, creating a configurable factory.
- * - Output: 9
- */
-function pow(power) {
-    return (x) => x ** power
-}
-const fn = pow(2)
-result = fn(3)
-console.log(result)

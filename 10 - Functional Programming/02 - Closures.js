@@ -9,7 +9,7 @@
  * a private reference to 'count'. The JS Garbage Collector cannot free 'count' because the closure
  * maintains a live binding to it, preserving its state across multiple calls.
  */
-function createCounter() {
+const createCounter = () => {
     let count = 0 // Enclosed outer variable (persists in memory via closure)
     return {
         increment: () => console.log(++count),
