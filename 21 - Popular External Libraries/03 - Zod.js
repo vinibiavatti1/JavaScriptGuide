@@ -90,7 +90,7 @@ if (user.error) {
 // Boolean
 z.boolean()
 
-// Number, Integer & Bigint
+// Numbers
 z.int()
 z.bigint()
 z.number().gt(5)
