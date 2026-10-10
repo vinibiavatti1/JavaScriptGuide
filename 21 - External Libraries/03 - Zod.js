@@ -60,26 +60,16 @@ console.log(isValid)
  * Parse Error
  * -
  * - Output:
- *   [
- *       {
- *           expected: 'string',
- *           code: 'invalid_type',
- *           path: [ 'name' ],
- *           message: 'Invalid input: expected string, received number'
- *       },
- *       {
- *           expected: 'number',
- *           code: 'invalid_type',
- *           path: [ 'age' ],
- *           message: 'Invalid input: expected number, received string'
- *       }
- *   ]
+ *   string | invalid_type | [ 'name' ] | Invalid input: expected string, received number
+ *   number | invalid_type | [ 'age' ] | Invalid input: expected number, received string
  */
 try {
     const user = UserSchema.parse({ name: 30, age: 'John' })
 } catch (err) {
     if (err instanceof z.ZodError) {
-        console.log(err.issues)
+        err.issues.forEach(issue => console.log(
+            issue.expected, issue.code, issue.path, issue.message
+        ))
     }
 }
 
@@ -87,27 +77,17 @@ try {
  * Safe Parse Error
  * -
  * - Output:
- *   [
- *       {
- *           expected: 'string',
- *           code: 'invalid_type',
- *           path: [ 'name' ],
- *           message: 'Invalid input: expected string, received number'
- *       },
- *       {
- *           expected: 'number',
- *           code: 'invalid_type',
- *           path: [ 'age' ],
- *           message: 'Invalid input: expected number, received string'
- *       }
- *   ]
+ *   string | invalid_type | [ 'name' ] | Invalid input: expected string, received number
+ *   number | invalid_type | [ 'age' ] | Invalid input: expected number, received string
  */
 user = UserSchema.safeParse({
     name: 30,
     age: 'John'
 })
 if (user.error) {
-    console.log(user.error.issues)
+    user.error.issues.forEach(issue => console.log(
+        issue.expected, issue.code, issue.path, issue.message
+    ))
 }
 
 //==================================================================================================
