@@ -86,7 +86,7 @@ if (userResult) {
 // Boolean
 z.boolean()
 
-// Numbers
+// Number
 z.int()
 z.bigint()
 z.number().gt(5)
@@ -114,13 +114,13 @@ z.string().toLowerCase();
 z.string().toUpperCase();
 z.string().normalize();
 
-// Dates
+// Date
 z.iso.date();
 z.iso.time();
 z.iso.datetime();
 z.iso.duration();
 
-// Arrays & Tuples
+// Array & Tuple
 z.array(z.string())
 z.tuple([z.string(), z.number()])
 
@@ -136,11 +136,10 @@ z.coerce.number();  // Number(input)
 z.coerce.boolean(); // Boolean(input)
 z.coerce.bigint();  // BigInt(input)
 
-// Literals
+// Literal
 z.literal('x')
-z.literal(['x', 'y', 'z'])
 
-// Enums
+// Enum
 z.enum(['x', 'y', 'z'])
 
 // Transformation
