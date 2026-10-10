@@ -3,6 +3,10 @@
  *
  * A minimal and flexible Node.js web application framework providing a robust set of features
  * for building web and mobile applications and RESTful APIs.
+ *
+ * Note: This document covers only the most common and widely-used features of the library. For
+ * advanced configurations, additional methods, and complete API references, please consult the
+ * official documentation.
  */
 import express from 'express'
 import bodyParser from 'body-parser'

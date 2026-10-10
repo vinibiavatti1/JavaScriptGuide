@@ -7,6 +7,10 @@
  * The name 'Lodash' is a clever wordplay on "low-dash", which is a phonetic pronunciation of an
  * underscore ("_"). It originated in 2012 as a high-performance fork and drop-in replacement for
  * Underscore.js, keeping the iconic underscore symbol as its primary namespace.
+ *
+ * Note: This document covers only the most common and widely-used features of the library. For
+ * advanced configurations, additional methods, and complete API references, please consult the
+ * official documentation.
  */
 import _ from 'lodash'
 
