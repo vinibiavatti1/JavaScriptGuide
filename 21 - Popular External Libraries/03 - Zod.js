@@ -18,7 +18,7 @@ import * as z from 'zod';
  * Creating Object Schema
  * - Defines structured object schemas with typed property shapes.
  */
-const UserSchema = z.object({
+const userSchema = z.object({
     name: z.string(),
     age: z.int().positive()
 })
@@ -29,25 +29,11 @@ const UserSchema = z.object({
  * - Output: { name: 'John', age: 30 }
  */
 try {
-    const user = UserSchema.parse({ name: 'John', age: 30 })
+    const user = userSchema.parse({ name: 'John', age: 30 })
     console.log(user)
 } catch (err) {
     // ...
 }
-
-/**
- * Safe Parse
- * - Validates input data without throwing exceptions, returning a result object.
- * - Output: { name: 'John', age: 30 }
- */
-let user = UserSchema.safeParse({ name: 'John', age: 30 })
-if (user.success) {
-    console.log(user.data)
-}
-
-//==================================================================================================
-// Error Handling
-//==================================================================================================
 
 /**
  * Parse Error
@@ -57,7 +43,7 @@ if (user.success) {
  *   number | invalid_type | [ 'age' ] | Invalid input: expected number, received string
  */
 try {
-    const user = UserSchema.parse({ name: 30, age: 'John' })
+    const user = userSchema.parse({ name: 30, age: 'John' })
 } catch (err) {
     if (err instanceof z.ZodError) {
         err.issues.forEach(issue => console.log(
@@ -67,18 +53,28 @@ try {
 }
 
 /**
+ * Safe Parse
+ * - Validates input data without throwing exceptions, returning a result object.
+ * - Output: { name: 'John', age: 30 }
+ */
+let userResult = userSchema.safeParse({ name: 'John', age: 30 })
+if (userResult.success) {
+    console.log(userResult.data)
+}
+
+/**
  * Safe Parse Error
  * - Inspects errors returned directly from safeParse result objects.
  * - Output:
  *   string | invalid_type | [ 'name' ] | Invalid input: expected string, received number
  *   number | invalid_type | [ 'age' ] | Invalid input: expected number, received string
  */
-user = UserSchema.safeParse({
+userResult = userSchema.safeParse({
     name: 30,
     age: 'John'
 })
-if (user.error) {
-    user.error.issues.forEach(issue => console.log(
+if (userResult) {
+    userResult.error.issues.forEach(issue => console.log(
         issue.expected, issue.code, issue.path, issue.message
     ))
 }
