@@ -11,115 +11,6 @@
 import * as z from 'zod';
 
 //==================================================================================================
-// Schema Types
-//==================================================================================================
-
-/**
- * Boolean
- * - Validates boolean values.
- */
-z.boolean()
-
-/**
- * Number & Bigint
- * - Validates numeric constraints, ranges, and bigints.
- */
-z.int()
-z.bigint()
-z.number().gt(5)
-z.number().min(5)
-z.number().lt(5)
-z.number().max(5)
-z.number().positive()
-z.number().nonnegative()
-z.number().negative()
-z.number().nonpositive()
-
-/**
- * String
- * - Validates string lengths, formats, and patterns.
- */
-z.string().max(5);
-z.string().min(5);
-z.string().length(5);
-z.string().nonempty();
-z.string().regex(/^[a-z]+$/);
-z.string().startsWith('aaa');
-z.string().endsWith('zzz');
-z.string().includes('---');
-z.string().uppercase();
-z.string().lowercase();
-z.string().trim();
-z.string().toLowerCase();
-z.string().toUpperCase();
-z.string().normalize();
-
-/**
- * Dates
- * - Validates ISO date and time formats.
- */
-z.iso.date();
-z.iso.time();
-z.iso.datetime();
-z.iso.duration();
-
-/**
- * Arrays & Tuples
- * - Validates homogeneous arrays and fixed-length typed tuples.
- */
-z.array(z.string())
-z.tuple([z.string(), z.number(), z.boolean()])
-
-/**
- * Union
- * - Validates values that can match any of the given schemas.
- */
-z.union([z.string(), z.number()])
-
-/**
- * Nullable
- * - Allows a schema to also accept null values.
- */
-z.nullable(z.string());
-
-/**
- * Data Coercion
- * - Automatically coerces incoming primitive values into target types.
- */
-z.coerce.string();  // String(input)
-z.coerce.number();  // Number(input)
-z.coerce.boolean(); // Boolean(input)
-z.coerce.bigint();  // BigInt(input)
-
-/**
- * Literals
- * - Validates exact primitive values or an array of allowed literal options.
- */
-z.literal('x')
-z.literal(['x', 'y', 'z'])
-
-/**
- * Enums
- * - Validates strings against a fixed set of options.
- * - Use '.exclude([...])' or '.extract([...])' to derive subsets from existing enums.
- */
-z.enum(['x', 'y', 'z'])
-
-//==================================================================================================
-// Transformation
-//==================================================================================================
-
-/**
- * Transformation
- * - Modifies or transforms parsed data values during validation.
- */
-z.string().trim();
-z.string().toLowerCase();
-z.string().toUpperCase();
-z.string().normalize();
-z.string().transform(val => val.length);
-
-//==================================================================================================
 // Object Schema
 //==================================================================================================
 
@@ -191,3 +82,74 @@ if (user.error) {
         issue.expected, issue.code, issue.path, issue.message
     ))
 }
+
+//==================================================================================================
+// Data Types & Features
+//==================================================================================================
+
+// Boolean
+z.boolean()
+
+// Number, Integer & Bigint
+z.int()
+z.bigint()
+z.number().gt(5)
+z.number().min(5)
+z.number().lt(5)
+z.number().max(5)
+z.number().positive()
+z.number().nonnegative()
+z.number().negative()
+z.number().nonpositive()
+
+// String
+z.string().max(5);
+z.string().min(5);
+z.string().length(5);
+z.string().nonempty();
+z.string().regex(/^[a-z]+$/);
+z.string().startsWith('aaa');
+z.string().endsWith('zzz');
+z.string().includes('---');
+z.string().uppercase();
+z.string().lowercase();
+z.string().trim();
+z.string().toLowerCase();
+z.string().toUpperCase();
+z.string().normalize();
+
+// Dates
+z.iso.date();
+z.iso.time();
+z.iso.datetime();
+z.iso.duration();
+
+// Arrays & Tuples
+z.array(z.string())
+z.tuple([z.string(), z.number()])
+
+// Union
+z.union([z.string(), z.number()])
+
+// Nullable
+z.nullable(z.string());
+
+// Coercion
+z.coerce.string();  // String(input)
+z.coerce.number();  // Number(input)
+z.coerce.boolean(); // Boolean(input)
+z.coerce.bigint();  // BigInt(input)
+
+// Literals
+z.literal('x')
+z.literal(['x', 'y', 'z'])
+
+// Enums
+z.enum(['x', 'y', 'z'])
+
+// Transformation
+z.string().trim();
+z.string().toLowerCase();
+z.string().toUpperCase();
+z.string().normalize();
+z.string().transform(val => val.length);
