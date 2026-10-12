@@ -3,40 +3,221 @@
  *
  * A formal documentation syntax used within comments to describe functions, variables, and types,
  * enabling IDE type-checking and autocompletion.
- *
- * Below there are examples of standard JSDoc tags for parameters, return types, and custom definitions.
  */
 
+//==================================================================================================
+// TypeScript Check
+//==================================================================================================
+
 /**
- * Adds two numbers together.
- * @param {number} x The first number.
- * @param {number} y The second number.
- * @returns {number} The sum of x and y.
+ * Enable TS Check
+ * - The "// @ts-check" comment enables static type checking in a single JavaScript file.
+ * - It uses VS Code's built-in TypeScript language engine, meaning no extra TypeScript installation
+ *   or dependencies are required.
  */
-function add(x, y) {
+// @ts-check
+
+/**
+ * Enable TS Check Globally
+ * - To enable type checking globally across your entire project without adding the directive to
+ *   every file, create a "jsconfig.json" file at the project root:
+ */;
+`
+{
+    "compilerOptions": {
+        "checkJs": true,
+        "strict": true
+    }
+}
+`;
+
+//==================================================================================================
+// Variables & Constants
+//==================================================================================================
+
+/**
+ * User name.
+ * @type {string}
+ */
+let userName = 'John'
+
+/**
+ * User id.
+ * @type {number | string}
+ */
+let userId = 1
+
+/**
+ * List of values.
+ * @type {string[]}
+ */
+let values = ['A', 'B', 'C']
+
+/**
+ * API base url.
+ * @const {string}
+ */
+const BASE_URL = 'http://api.dev'
+
+//==================================================================================================
+// Objects & Enums
+//==================================================================================================
+
+/**
+ * User data.
+ * @type {Object}
+ * @property {string} name The user name.
+ * @property {number} age The user age.
+ */
+let userData = {
+    name: 'John',
+    age: 30
+}
+
+/**
+ * Config object.
+ * @type {Object}
+ * @readonly
+ */
+const CONFIG = Object.freeze({
+    timeout: 1200
+})
+
+/**
+ * Colors enumeration.
+ * @enum {string}
+ * @readonly
+ */
+const Colors = Object.freeze({
+    RED: '#ff0000',
+    GREEN: '#00ff00',
+    BLUE: '#0000ff',
+})
+
+//==================================================================================================
+// Function & Methods
+//==================================================================================================
+
+/**
+ * Calculates the sum of two numbers.
+ * @param {number} x The first number to sum.
+ * @param {number} y The second number to sum.
+ * @returns {number} The sum result.
+ */
+function sum(x, y) {
     return x + y
 }
 
 /**
- * Establishes a network connection using a configuration object.
- * @param {Object} config Configuration object.
- * @param {string} config.host The server host address.
- * @param {number} [config.port=8080] The server port.
- * @returns {void}
+ * Calculates the division of two numbers.
+ * @param {number} x The dividend.
+ * @param {number} y The divisor.
+ * @throws {RangeError} If the divisor is zero.
+ * @returns {number} The division result.
  */
-function connect({ host, port = 8080 }) { }
+function div(x, y) {
+    if (y === 0) {
+        throw new RangeError('Cannot divide by zero')
+    }
+    return x / y
+}
 
 /**
- * Represents a system user.
+ * Fetches the user data.
+ * @param {number} userId The user id.
+ * @returns {Promise<string>} The user name.
+ */
+async function fetchUserName(userId) {
+    const response = await fetch('http://api.dev')
+    return response.text()
+}
+
+/**
+ * Open a file.
+ * @param {string} name The file name.
+ * @param {function(string): void} callback The function to process the content.
+ */
+function openFile(name, callback) {
+    const content = 'Hello World'
+    callback(content)
+}
+
+/**
+ * Reads the file content.
+ * @param {string} name The file name.
+ * @param {(content: string) => void} callback The function to process the content.
+ */
+function readFile(name, callback) {
+    const content = 'Hello World'
+    callback(content)
+}
+
+//==================================================================================================
+// Type Definition
+//==================================================================================================
+
+/**
  * @typedef {Object} User
- * @property {number} id Unique identifier.
- * @property {string} username User handle.
- * @property {boolean} [isActive=true] Account status.
+ * @property {string} name The user name.
+ * @property {number} age The user age.
+ * @property {function(): boolean} isOverage True if the age > 18.
  */
 
 /**
- * Processes a user object using custom defined types.
- * @param {User} user The user object to process.
- * @returns {string} Status message.
+ * Registers the user in the database.
+ * @param {User} user The user to register.
+ * @returns {boolean} Operation success.
  */
-function processUser(user) { }
+function registerUser(user) {
+    console.log('User registered successfully')
+    return true
+}
+
+//==================================================================================================
+// Callbacks
+//==================================================================================================
+
+/**
+ * @callback ProcessFileContent
+ * @param {string} content The file content.
+ */
+
+/**
+ * Reads the document content.
+ * @param {string} name The file name.
+ * @param {ProcessFileContent} callback The function to process the content.
+ */
+function readDocument(name, callback) {
+    const content = 'Hello World'
+    callback(content)
+}
+
+//==================================================================================================
+// Generics
+//==================================================================================================
+
+/**
+ * Retrieves the first element from the array.
+ * @template T The element type.
+ * @param {T[]} array An array of the element type.
+ * @returns {T} The first element of the array.
+ */
+function getFirstElement(array) {
+    return array[0]
+}
+
+//==================================================================================================
+// Importing Types
+//==================================================================================================
+
+/**
+ * Check if the employee has the admin role.
+ * @param {import('../.resources/module.js').Employee} employee The employee.
+ * @returns {boolean} True if the employee has the admin role.
+ */
+function isAdmin(employee) {
+    return employee.role === 'admin'
+}
+
+// Export to prevent name conflicts.
+export { }
