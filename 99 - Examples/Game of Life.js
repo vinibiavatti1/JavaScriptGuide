@@ -23,7 +23,7 @@ export class GameOfLifeError extends Error { }
  * @throws {GameOfLifeError} If the notation is invalid.
  * @returns {Rule} A rule object.
  */
-export const createRule = notation => {
+export const parseRule = notation => {
     const parts = notation.split('/')
     if (parts.length !== 2) {
         throw new GameOfLifeError('Invalid notation: ' + notation)
@@ -222,7 +222,7 @@ game.setCell(2 + offsetRows, 4 + offsetCols, true);
 game.setCell(2 + offsetRows, 5 + offsetCols, true);
 game.setCell(2 + offsetRows, 6 + offsetCols, true);
 
-const rule = createRule(Notations.GOL)
+const rule = parseRule(Notations.GOL)
 const maxGenerationCount = 1000
 const renderDelay = 100
 

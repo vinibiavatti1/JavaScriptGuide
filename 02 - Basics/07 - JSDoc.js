@@ -54,6 +54,12 @@ let userId = 1
 let values = ['A', 'B', 'C']
 
 /**
+ * Point 2D.
+ * @type {[number, number]}
+ */
+let point = [1, 2]
+
+/**
  * API base url.
  * @const {string}
  */
@@ -157,6 +163,7 @@ function readFile(name, callback) {
 //==================================================================================================
 
 /**
+ * Define the User type.
  * @typedef {Object} User
  * @property {string} name The user name.
  * @property {number} age The user age.
@@ -178,6 +185,7 @@ function registerUser(user) {
 //==================================================================================================
 
 /**
+ * Define the ProcessFileContent callback.
  * @callback ProcessFileContent
  * @param {string} content The file content.
  */
