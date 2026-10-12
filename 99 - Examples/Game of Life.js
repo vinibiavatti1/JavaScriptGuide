@@ -93,14 +93,14 @@ export const createGameOfLife = (width, height) => {
      */
     const getAliveNeighborsCount = (row, col) => {
         let count = 0
-        count += isCellAlive(row - 1, col - 1) ? 1 : 0
-        count += isCellAlive(row - 1, col - 0) ? 1 : 0
-        count += isCellAlive(row - 1, col + 1) ? 1 : 0
-        count += isCellAlive(row + 0, col - 1) ? 1 : 0
-        count += isCellAlive(row + 0, col + 1) ? 1 : 0
-        count += isCellAlive(row + 1, col - 1) ? 1 : 0
-        count += isCellAlive(row + 1, col - 0) ? 1 : 0
-        count += isCellAlive(row + 1, col + 1) ? 1 : 0
+        count += isAlive(row - 1, col - 1) ? 1 : 0
+        count += isAlive(row - 1, col - 0) ? 1 : 0
+        count += isAlive(row - 1, col + 1) ? 1 : 0
+        count += isAlive(row + 0, col - 1) ? 1 : 0
+        count += isAlive(row + 0, col + 1) ? 1 : 0
+        count += isAlive(row + 1, col - 1) ? 1 : 0
+        count += isAlive(row + 1, col - 0) ? 1 : 0
+        count += isAlive(row + 1, col + 1) ? 1 : 0
         return count
     }
 
@@ -110,7 +110,7 @@ export const createGameOfLife = (width, height) => {
      * @param {number} col The col number.
      * @returns {boolean} True if cell is alive at position.
      */
-    const isCellAlive = (row, col) => {
+    const isAlive = (row, col) => {
         if (!isValidCoords(row, col)) {
             return false
         }
