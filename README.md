@@ -1,6 +1,8 @@
 <p align="center">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" width="70px" style="margin-right: 15px;" />
-    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" width="90px" style="margin-right: 15px;" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" width="70px" />
+    &nbsp;&nbsp;&nbsp;
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" width="90px" />
+    &nbsp;&nbsp;&nbsp;
     <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" width="70px" />
     <h1 align="center">Web Development Guide</h1>
     <p align="center">A practical reference guide for JavaScript, Node.js, and TypeScript.</p>
