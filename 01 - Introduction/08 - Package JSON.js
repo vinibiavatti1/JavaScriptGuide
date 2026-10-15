@@ -18,7 +18,7 @@
  */
 
 /**
- * Example of a simple package.json file content:
+ * Example of a standard package.json file content:
  */
 `
 {

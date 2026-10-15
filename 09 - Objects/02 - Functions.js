@@ -11,21 +11,21 @@
 //==================================================================================================
 
 /**
- * Declaration
+ * Standard Function
  * - Defines a named function using the 'function' keyword.
  * - Subject to full hoisting, allowing it to be invoked before its declaration in the file.
  */
 function process() { }
 
 /**
- * Declaration (As Expression)
+ * Function As Expression
  * - Assigns an anonymous function to a variable.
  * - Not hoisted; cannot be executed before the line where it is defined.
  */
 const run = function () { }
 
 /**
- * Declaration (As Arrow Function)
+ * Arrow Function
  * - Uses a compact syntax with the arrow operator (=>).
  * - Lexically binds the 'this' context from surrounding scope and lacks its own 'arguments'.
  * - Preferred in Functional Programming due to concise syntax, immutability of bindings, and
@@ -47,7 +47,7 @@ const perform = () => { }
 //==================================================================================================
 
 /**
- * Positional Parameters
+ * Parameters
  * - Accepts arguments mapping sequentially to parameter positions in the signature.
  * - Output: My name is John and I'm 30 years old
  */
@@ -68,16 +68,6 @@ formatPrice(100)
 formatPrice(100, '€')
 
 /**
- * Destructured Parameters
- * - Destructures properties directly from an options object passed as an argument.
- * - Output: John admin
- */
-function createUser({ name, role = 'admin' }) {
-    console.log(name, role)
-}
-createUser({ name: 'John' })
-
-/**
  * Rest Parameters
  * - Collects all remaining individual arguments into a single Array instance.
  * - Output: [ 'Hello', 'World' ]
@@ -86,6 +76,16 @@ function print(...args) {
     console.log(args)
 }
 print('Hello', 'World')
+
+/**
+ * Destructured Parameters
+ * - Destructures properties directly from an options object passed as an argument.
+ * - Output: John admin
+ */
+function createUser({ name, role = 'admin' }) {
+    console.log(name, role)
+}
+createUser({ name: 'John' })
 
 /**
  * Rest Properties

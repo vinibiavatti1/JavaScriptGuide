@@ -1,34 +1,52 @@
 /**
  * Data Types
  *
- * An overview of the various built-in data types available in modern JavaScript and Node.js.
+ * An overview of the built-in data types and reference structures available in modern JavaScript
+ * and Node.js, distinguishing between immutable primitive values and mutable reference types.
  */
+
+//==================================================================================================
+// Data Types
+//==================================================================================================
 
 /**
  * Primitive Types
  * - Immutable values stored directly on the stack that represent a single atomic value.
  */
-const x1 = 1                // number
-const x2 = 3.14             // number
-const x3 = 123n             // bigint
-const x4 = true             // boolean
-const x5 = 'John Doe'       // string
-const x6 = Symbol('id')     // symbol
-const x7 = null             // null
-const x8 = undefined        // undefined
+const a1 = 1                // number
+const a2 = 3.14             // number
+const a3 = 123n             // bigint
+const a4 = true             // boolean
+const a5 = 'John Doe'       // string
+const a6 = Symbol('id')     // symbol
+const a7 = null             // null
+const a8 = undefined        // undefined
 
 /**
- * Complex Types
- * - Mutable reference structures stored on the heap with dynamic behaviors or collection
- *   interfaces.
+ * Collections
+ * - Data structures designed for storing collections of items or unique keyed values.
  */
-const y1 = { name: 'John' } // object
-const y2 = ['A', 'B', 'C']  // array
-const y3 = new Set()        // set
-const y4 = new Map()        // map
-const y5 = /[a-z]*/g        // regex
-const y6 = () => { }        // function
-const y7 = Temporal.PlainDateTime.from('2026-09-30T13:09:25')
+const b1 = ['A', 'B', 'C']  // array
+const b2 = new Set()        // set
+const b3 = new Map()        // map
+
+/**
+ * Objects
+ * - Mutable reference structures stored on the heap representing key-value collections or entities.
+ */
+const c1 = { name: 'John' } // object
+
+/**
+ * Specialized Types
+ * - Advanced or domain-specific native objects providing rich functionality.
+ */
+const d1 = /[a-z]*/g        // regex (regular expression pattern)
+const d2 = () => { }        // function (callable reference block)
+const d3 = new Date()       // date-time object
+
+//==================================================================================================
+// Operations
+//==================================================================================================
 
 /**
  * Type Of

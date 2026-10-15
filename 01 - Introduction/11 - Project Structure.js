@@ -26,6 +26,7 @@ my-node-project/
 |  |- index.js        // Entry point file
 |- .editorconfig      // Editor formatting configuration rules
 |- .env               // Environment variables (secrets, port, database URL)
+|- jsconfig.js        // JavaScript configuration file for IDE static analysis
 |- package.json       // Project manifest, scripts, and dependencies metadata
 |- package-lock.json  // Locks exact versions of installed node_modules dependencies
 `
